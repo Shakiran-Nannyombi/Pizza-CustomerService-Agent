@@ -1,1 +1,0 @@
-https://nice-dune-07e53ec0f.2.azurestaticapps.net/
