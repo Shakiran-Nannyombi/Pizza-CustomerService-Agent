@@ -22,7 +22,16 @@ from pizza_agent.tools import (
     check_delivery_availability,
     get_special_deals,
     get_estimated_delivery_time,
-    calculate_order_total
+    calculate_order_total,
+    start_new_order,
+    add_pizza_to_order,
+    add_side_to_order,
+    add_drink_to_order,
+    review_current_order,
+    add_special_instructions,
+    confirm_order,
+    cancel_current_order,
+    get_order_status
 )
 
 
@@ -96,6 +105,50 @@ class APIAgent:
     def _detect_intent_and_execute(self, user_input: str) -> Tuple[Optional[str], Optional[str]]:
         """Detect user intent and execute appropriate tool"""
         user_lower = user_input.lower()
+        
+        # Order management - Start new order
+        if any(phrase in user_lower for phrase in ['start order', 'place order', 'i want to order', 'order pizza', 'my name is']):
+            # Try to extract name and phone
+            if 'my name is' in user_lower:
+                return ("order_prompt", "Great! To start your order, I'll need your phone number for the order.")
+            return ("order_prompt", "I'd be happy to help you order! Can I get your name and phone number to start?")
+        
+        # Review order
+        if any(phrase in user_lower for phrase in ['review order', 'check order', 'what do i have', 'order summary', 'my order']):
+            result = review_current_order()
+            if result['success']:
+                order = result['order']
+                summary = f"Here's your order:\n\n"
+                for item in order['items']:
+                    summary += f"- {item['quantity']}x {item['size']} {item['name']}"
+                    if item['customizations']:
+                        summary += f" ({item['customizations']})"
+                    summary += f" - {item['price']}\n"
+                summary += f"\nSubtotal: {order['subtotal']}\n"
+                summary += f"Tax: {order['tax']}\n"
+                summary += f"Delivery Fee: {order['delivery_fee']}\n"
+                summary += f"Total: {order['total']}"
+                return ("order_review", summary)
+            return ("order_review", result['message'])
+        
+        # Confirm order
+        if any(phrase in user_lower for phrase in ['confirm order', 'place the order', 'finalize order', "that's all", "that's it", 'complete order']):
+            result = confirm_order()
+            if result['success']:
+                order = result['order']
+                msg = f"✅ {result['message']}\n\nOrder #{order['order_id']}\n"
+                msg += f"Total: {order['total']}\n"
+                msg += f"Type: {order['order_type'].title()}\n"
+                if order['order_type'] == 'delivery':
+                    msg += f"Delivery to: {order['customer_address']}\n"
+                msg += f"\nEstimated time: 30-45 minutes"
+                return ("order_confirm", msg)
+            return ("order_confirm", result['message'])
+        
+        # Cancel order
+        if any(phrase in user_lower for phrase in ['cancel order', 'start over', 'clear order']):
+            result = cancel_current_order()
+            return ("order_cancel", result['message'])
         
         # Pizza quantity calculation
         if any(word in user_lower for word in ['how many', 'quantity', 'people', 'feed']):
@@ -175,13 +228,28 @@ class APIAgent:
                 return response.choices[0].message.content.strip()
             
             # No tool match - use AI with knowledge base
-            system_msg = f"""You are a helpful Pizza Customer Service Agent.
+            system_msg = f"""You are a helpful Pizza Restaurant Customer Service Agent. Your job is to help customers order pizza, answer questions, and provide excellent service.
+
+IMPORTANT ORDER-TAKING INSTRUCTIONS:
+1. When a customer wants to order, ask for their name and phone number first
+2. Ask if it's for delivery (need address) or pickup
+3. Help them build their order by suggesting items from the menu
+4. Confirm each item as you add it
+5. Offer to review the order before finalizing
+6. Be friendly, patient, and helpful
+
+AVAILABLE ACTIONS:
+- Start orders: Ask for name, phone, and address (if delivery)
+- Add items: Pizzas, sides, drinks, desserts
+- Review order: Show what they've ordered so far
+- Confirm order: Finalize and submit the order
+- Cancel order: Start over if needed
 
 Knowledge Base:
 {self._get_kb_summary()}
 
 Answer questions about pizzas, menu, stores, delivery, and deals.
-Be friendly and helpful!"""
+Be friendly, conversational, and help customers make great choices!"""
             
             # Add to conversation history
             self.messages.append({"role": "user", "content": user_input})

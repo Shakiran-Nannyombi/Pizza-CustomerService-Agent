@@ -10,14 +10,14 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Base paths
-BASE_DIR = Path(__file__).parent.parent.parent
-KNOWLEDGE_DIR = BASE_DIR / "knowledge"
+BASE_DIR = Path(__file__).parent.parent
+KNOWLEDGE_DIR = BASE_DIR / "pizza_agent" / "knowledge"
 SRC_DIR = BASE_DIR / "src"
 
 # API Configuration
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 GROQ_API_URL = "https://api.groq.com/openai/v1"
-GROQ_MODEL = "llama-3.1-70b-versatile"
+GROQ_MODEL = "llama-3.3-70b-versatile"
 
 # Backwards compatibility
 LLAMA_API_KEY = GROQ_API_KEY  # Use Groq key

@@ -7,7 +7,16 @@ requires-python = ">=3.12"
 dependencies = [
     "azure-ai-projects==2.0.0b1",
     "azure-identity>=1.25.2",
+    "fastapi>=0.104.0",
     "jsonref>=1.1.0",
-    "openai>=2.26.0",
-    "python-dotenv>=1.2.2",
+    "langchain>=0.3.0",
+    "langchain-community>=0.3.0",
+    "langchain-core>=1.2.0",
+    "langchain-openai>=1.0.0",
+    "openai>=1.25.0",
+    "pydantic>=2.0.0",
+    "python-dotenv>=1.0.0",
+    "requests>=2.31.0",
+    "streamlit>=1.30.0",
+    "uvicorn[standard]>=0.24.0",
 ]
