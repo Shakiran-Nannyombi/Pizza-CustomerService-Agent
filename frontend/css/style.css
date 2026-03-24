@@ -68,6 +68,52 @@ h1, h2, h3, h4, h5, h6 {
 .bg-cream { background-color: var(--cream); }
 .bg-charcoal { background-color: var(--charcoal); }
 .bg-primary { background-color: var(--primary); }
+.bg-white { background-color: var(--white); }
 .text-primary { color: var(--primary); }
 .text-charcoal { color: var(--charcoal); }
 .border-primary { border-color: var(--primary); }
+
+/* Custom Notifications (Toast) */
+#notification-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.toast {
+    min-width: 300px;
+    padding: 16px 20px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border-left: 4px solid var(--primary);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    animation: slide-in 0.3s ease-out;
+    font-weight: 600;
+}
+
+@keyframes slide-in {
+    from { opacity: 0; transform: translateX(20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.toast.success { border-left-color: #27AE60; }
+.toast.error { border-left-color: #C0392B; }
+
+/* Enhanced Form Inputs */
+.form-input {
+    background-color: white !important;
+    border: 1px solid rgba(255, 107, 53, 0.2);
+    color: var(--charcoal);
+}
+
+.form-input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+}

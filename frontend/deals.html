@@ -5,15 +5,10 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>Deals - Artisan Pizza AI</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <script>
-        tailwind.config = {
-          theme: { extend: { colors: { primary: '#FF6B35', cream: '#FFF8E7', charcoal: '#262626' }, fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Playfair Display', 'serif'] } } }
-        }
-    </script>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script>
         tailwind.config = {
-          theme: { extend: { colors: { primary: '#FF6B35', cream: '#FFF8E7', charcoal: '#262626' } } }
+          theme: { extend: { colors: { primary: '#FF6B35', cream: '#FFF8E7', charcoal: '#262626' }, fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Playfair Display', 'serif'] } } }
         }
     </script>
     <link rel="stylesheet" href="css/style.css">
@@ -40,24 +35,57 @@
     </header>
 
     <main class="pt-32 pb-20 px-4">
-        <div class="max-w-4xl mx-auto">
-            <h1 class="text-5xl font-bold mb-12 text-center">Todays Special Deals</h1>
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h1 class="text-6xl font-black mb-4" style="font-family: 'Playfair Display', serif;">Exclusive <span class="text-primary">Deals</span></h1>
+                <p class="text-gray-500 font-semibold tracking-widest uppercase text-sm">Save more on your artisan favorites</p>
+            </div>
             
-            <div class="space-y-6">
-                <div class="bg-white p-8 rounded-3xl shadow-lg border-2 border-primary flex flex-col md:flex-row justify-between items-center gap-6">
-                    <div>
-                        <h3 class="text-2xl font-bold mb-2">BOGO Monday</h3>
-                        <p class="text-gray-600">Buy one large specialty pizza, get a margherita for free!</p>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Deal 1 -->
+                <div class="bg-white p-10 rounded-[2.5rem] shadow-xl shadow-orange-100 border-4 border-primary relative overflow-hidden group">
+                    <div class="absolute -top-10 -right-10 w-40 h-40 bg-primary/10 rounded-full group-hover:scale-150 transition-transform duration-700"></div>
+                    <div class="relative z-10">
+                        <div class="flex items-center gap-3 mb-6 text-primary font-black uppercase text-xs tracking-widest">
+                            <i data-lucide="zap" class="w-4 h-4 fill-primary"></i> Flash Deal
+                        </div>
+                        <h3 class="text-4xl font-black mb-4">BOGO Monday</h3>
+                        <p class="text-gray-500 leading-relaxed mb-8 max-w-sm">Elevate your Mondays. Buy any signature AI pizza and get a classic Margherita absolutely free.</p>
+                        <button class="bg-primary text-white px-10 py-4 rounded-2xl font-black uppercase text-sm tracking-widest hover:bg-orange-600 transition-all shadow-lg shadow-primary/30 active:scale-95">Claim Deal</button>
                     </div>
-                    <button class="bg-primary text-white px-8 py-3 rounded-xl font-bold hover:bg-orange-600 transition-colors whitespace-nowrap">Claim Deal</button>
                 </div>
 
-                <div class="bg-white p-8 rounded-3xl shadow-lg border border-orange-100 flex flex-col md:flex-row justify-between items-center gap-6">
-                    <div>
-                        <h3 class="text-2xl font-bold mb-2">Family Feast</h3>
-                        <p class="text-gray-600">2 Large Pizzas + 4 Drinks + Garlic Knots for set price.</p>
+                <!-- Deal 2 -->
+                <div class="bg-charcoal text-white p-10 rounded-[2.5rem] shadow-xl relative overflow-hidden group">
+                    <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-white/5 rounded-full group-hover:scale-150 transition-transform duration-700"></div>
+                    <div class="relative z-10">
+                        <div class="flex items-center gap-3 mb-6 text-primary font-black uppercase text-xs tracking-widest">
+                            <i data-lucide="users" class="w-4 h-4"></i> Group Bundle
+                        </div>
+                        <h3 class="text-4xl font-black mb-4">Family Feast</h3>
+                        <p class="text-gray-400 leading-relaxed mb-8 max-w-sm">The ultimate weekend upgrade. 2 Large Pizzas, 1 Side, and a 2L Drink for only $45.</p>
+                        <button class="bg-white text-charcoal px-10 py-4 rounded-2xl font-black uppercase text-sm tracking-widest hover:bg-primary hover:text-white transition-all shadow-lg active:scale-95">View Bundle</button>
                     </div>
-                    <button class="bg-charcoal text-white px-8 py-3 rounded-xl font-bold hover:bg-primary transition-colors whitespace-nowrap">View Bundle</button>
+                </div>
+
+                <!-- Deal 3 -->
+                <div class="bg-white p-10 rounded-[2.5rem] shadow-xl shadow-orange-100 border border-orange-100 group">
+                    <div class="flex items-center gap-3 mb-6 text-primary font-black uppercase text-xs tracking-widest">
+                        <i data-lucide="graduation-cap" class="w-4 h-4"></i> Student Special
+                    </div>
+                    <h3 class="text-4xl font-black mb-4">Campus Fuel</h3>
+                    <p class="text-gray-500 leading-relaxed mb-8 max-w-sm">Flash your Makerere or Kyambogo ID for a 15% discount on all regular individual orders.</p>
+                    <button class="bg-charcoal text-white px-10 py-4 rounded-2xl font-black uppercase text-sm tracking-widest hover:bg-primary transition-all shadow-lg active:scale-95">Apply Student ID</button>
+                </div>
+
+                <!-- Deal 4 -->
+                <div class="bg-white p-10 rounded-[2.5rem] shadow-xl shadow-orange-100 border border-orange-100 group">
+                    <div class="flex items-center gap-3 mb-6 text-primary font-black uppercase text-xs tracking-widest">
+                        <i data-lucide="clock" class="w-4 h-4"></i> Corporate Hour
+                    </div>
+                    <h3 class="text-4xl font-black mb-4">Lunch Sprint</h3>
+                    <p class="text-gray-500 leading-relaxed mb-8 max-w-sm">Order between 11 AM - 1 PM on weekdays for free delivery to any office in Nakasero or Kololo.</p>
+                    <button class="bg-charcoal text-white px-10 py-4 rounded-2xl font-black uppercase text-sm tracking-widest hover:bg-primary transition-all shadow-lg active:scale-95">Set Lunch Timer</button>
                 </div>
             </div>
         </div>

@@ -5,27 +5,15 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>Menu - Artisan Pizza AI</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script>
         tailwind.config = {
           theme: {
             extend: {
-              colors: {
-                primary: '#FF6B35',
-                cream: '#FFF8E7',
-                charcoal: '#262626',
-              },
-              fontFamily: {
-                sans: ['Inter', 'sans-serif'],
-                serif: ['Playfair Display', 'serif'],
-              }
+              colors: { primary: '#FF6B35', cream: '#FFF8E7', charcoal: '#262626' },
+              fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Playfair Display', 'serif'] }
             }
           }
-        }
-    </script>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <script>
-        tailwind.config = {
-          theme: { extend: { colors: { primary: '#FF6B35', cream: '#FFF8E7', charcoal: '#262626' } } }
         }
     </script>
     <link rel="stylesheet" href="css/style.css">
@@ -51,65 +39,133 @@
         </div>
     </header>
 
-    <main class="pt-32 pb-20">
-        <div class="max-w-7xl mx-auto px-4">
-            <h1 class="text-5xl font-bold mb-12 text-center">Our Full Menu</h1>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Menu Item 1 -->
-                <div class="bg-white rounded-3xl overflow-hidden shadow-lg group">
-                    <div class="h-60 overflow-hidden">
-                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAd59xr1RciSXXP5O38vn9jddxNiBNwcCV0HQ1sAVO_UfAialQ04TDiR1ETSrFsrOOPBhhLtgax_IL5OhhriYc9YKqVvafSJjxd-ppXCJz1nUtxLm3kzILIDjavcYX1z97dxqnhRweCx4OJk3-uWVTeAzreZ5m0_W2vcpSKQogJgfUC9mqh8H-mzxsKozPCfWWKdE34O-ZryGa7WzVfvf6zyPHFPJ-VKqC46y5FrYsvcGza6M8W9lVW1l9BVwI5Od_15T7X5ozVK4dw" alt="Truffle Mushroom">
-                    </div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-center mb-2">
-                            <h3 class="text-xl font-bold">Truffle Mushroom</h3>
-                            <span class="text-primary font-bold">$24</span>
-                        </div>
-                        <p class="text-gray-500 text-sm mb-6">Wild mushrooms, truffle oil, fresh mozzarella.</p>
-                        <button class="add-to-cart w-full bg-charcoal text-white py-3 rounded-xl font-bold hover:bg-primary transition-colors"
-                            data-name="Truffle Mushroom" data-price="24.00" data-size="Large" data-img="...">
-                            Add to Cart
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Menu Item 2 -->
-                <div class="bg-white rounded-3xl overflow-hidden shadow-lg group">
-                    <div class="h-60 overflow-hidden">
-                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlHNFMiQoAsg02SiyjgojNj-mTvwXFL8x23MzobJK7gbRJZfWePdSly7P19eif_NsamtwYp8oJaV5hGNrs8lsNogfsMNJF3yJG4tyeXEgA1mXzEpcajmlC75W-uIN7U-h0oPg5pQGbpXh4SFk-L4Qz22JySuVInooyHrn1esKrSE3o7ArFGHyBZfWemcQ4YnKSLvlUrFm4QXouDfv8i7B6oXNQVR3az_oZsqseX5JTQpxVoqA9fjIxulFhKCVXTTb9tsrWZBzRP3Us" alt="Spicy Pepperoni">
-                    </div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-center mb-2">
-                            <h3 class="text-xl font-bold">Spicy Pepperoni</h3>
-                            <span class="text-primary font-bold">$22</span>
-                        </div>
-                        <p class="text-gray-500 text-sm mb-6">Artisanal pepperoni, hot honey, chili flakes.</p>
-                        <button class="add-to-cart w-full bg-charcoal text-white py-3 rounded-xl font-bold hover:bg-primary transition-colors"
-                            data-name="Spicy Pepperoni" data-price="22.00" data-size="Large" data-img="...">
-                            Add to Cart
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Menu Item 3 -->
-                <div class="bg-white rounded-3xl overflow-hidden shadow-lg group">
-                    <div class="h-60 overflow-hidden">
-                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8Ag1BX3__fXl18bPamr6E9BXG2-IfDLsIV4uEMMlM6R5qcqYJNcd2gHruloG9UbCm3RKM1nfU00JU3lPzkvTLVp_v4evdL1Oa80e8gmzeqBb5IMomNAljCV_JCEtS0tMCXScmo_Suu5k6_G9f8jq0MA5NGxXoRA_Q_Nd9yzEu1hZSamWoPVT46hdqxGcIdAjpbU6cWR_lvX00ZO5GK-04186opgLFj271IqwPAgOkCtEjyEagaxScDzRXKTIjdl8i0xSX7Y-2El6C" alt="Pesto Burrata">
-                    </div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-center mb-2">
-                            <h3 class="text-xl font-bold">Pesto Burrata</h3>
-                            <span class="text-primary font-bold">$26</span>
-                        </div>
-                        <p class="text-gray-500 text-sm mb-6">Burrata, basil pesto, toasted pine nuts.</p>
-                        <button class="add-to-cart w-full bg-charcoal text-white py-3 rounded-xl font-bold hover:bg-primary transition-colors"
-                            data-name="Pesto Burrata" data-price="26.00" data-size="Large" data-img="...">
-                            Add to Cart
-                        </button>
-                    </div>
-                </div>
+    <main class="pt-32 pb-20 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h1 class="text-6xl font-black mb-4" style="font-family: 'Playfair Display', serif;">The <span class="text-primary">Artisan</span> Menu</h1>
+                <p class="text-gray-500 max-w-2xl mx-auto">Crafted with precision, delivered with soul. Experience the intersection of technology and tradition.</p>
             </div>
+
+            <!-- Category: Signature Pizzas -->
+            <section class="mb-20">
+                <div class="flex items-center gap-4 mb-10">
+                    <h2 class="text-3xl font-bold">Signature <span class="text-primary">AI</span> Classics</h2>
+                    <div class="h-[2px] flex-1 bg-orange-100"></div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Truffle Mushroom -->
+                    <div class="bg-white rounded-3xl overflow-hidden shadow-xl shadow-orange-100/20 group hover:-translate-y-2 transition-transform duration-300">
+                        <div class="h-64 overflow-hidden relative">
+                            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAd59xr1RciSXXP5O38vn9jddxNiBNwcCV0HQ1sAVO_UfAialQ04TDiR1ETSrFsrOOPBhhLtgax_IL5OhhriYc9YKqVvafSJjxd-ppXCJz1nUtxLm3kzILIDjavcYX1z97dxqnhRweCx4OJk3-uWVTeAzreZ5m0_W2vcpSKQogJgfUC9mqh8H-mzxsKozPCfWWKdE34O-ZryGa7WzVfvf6zyPHFPJ-VKqC46y5FrYsvcGza6M8W9lVW1l9BVwI5Od_15T7X5ozVK4dw" alt="Truffle Mushroom">
+                            <span class="absolute top-4 left-4 bg-primary text-white text-[10px] uppercase font-black px-3 py-1 rounded-full tracking-tighter">Bestseller</span>
+                        </div>
+                        <div class="p-8">
+                            <div class="flex justify-between items-start mb-4">
+                                <div>
+                                    <h3 class="text-2xl font-bold mb-1">Truffle Mushroom</h3>
+                                    <p class="text-gray-400 text-xs">Wild Mushrooms • White Truffle Oil • Fontina</p>
+                                </div>
+                                <span class="text-2xl font-black text-primary">$24</span>
+                            </div>
+                            <button class="add-to-cart w-full bg-charcoal text-white py-4 rounded-2xl font-bold hover:bg-primary transition-all flex items-center justify-center gap-2 group/btn"
+                                data-name="Truffle Mushroom" data-price="24.00" data-size="Large" data-img="https://lh3.googleusercontent.com/aida-public/AB6AXuAd59xr1RciSXXP5O38vn9jddxNiBNwcCV0HQ1sAVO_UfAialQ04TDiR1ETSrFsrOOPBhhLtgax_IL5OhhriYc9YKqVvafSJjxd-ppXCJz1nUtxLm3kzILIDjavcYX1z97dxqnhRweCx4OJk3-uWVTeAzreZ5m0_W2vcpSKQogJgfUC9mqh8H-mzxsKozPCfWWKdE34O-ZryGa7WzVfvf6zyPHFPJ-VKqC46y5FrYsvcGza6M8W9lVW1l9BVwI5Od_15T7X5ozVK4dw">
+                                <i data-lucide="plus" class="w-5 h-5 group-hover/btn:rotate-90 transition-transform"></i>
+                                Add to Order
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Spicy Pepperoni -->
+                    <div class="bg-white rounded-3xl overflow-hidden shadow-xl shadow-orange-100/20 group hover:-translate-y-2 transition-transform duration-300">
+                        <div class="h-64 overflow-hidden relative">
+                            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlHNFMiQoAsg02SiyjgojNj-mTvwXFL8x23MzobJK7gbRJZfWePdSly7P19eif_NsamtwYp8oJaV5hGNrs8lsNogfsMNJF3yJG4tyeXEgA1mXzEpcajmlC75W-uIN7U-h0oPg5pQGbpXh4SFk-L4Qz22JySuVInooyHrn1esKrSE3o7ArFGHyBZfWemcQ4YnKSLvlUrFm4QXouDfv8i7B6oXNQVR3az_oZsqseX5JTQpxVoqA9fjIxulFhKCVXTTb9tsrWZBzRP3Us" alt="Spicy Pepperoni">
+                        </div>
+                        <div class="p-8">
+                            <div class="flex justify-between items-start mb-4">
+                                <div>
+                                    <h3 class="text-2xl font-bold mb-1">Spicy Pepperoni</h3>
+                                    <p class="text-gray-400 text-xs">Aged Pepperoni • Hot Honey • Calabrian Chili</p>
+                                </div>
+                                <span class="text-2xl font-black text-primary">$22</span>
+                            </div>
+                            <button class="add-to-cart w-full bg-charcoal text-white py-4 rounded-2xl font-bold hover:bg-primary transition-all flex items-center justify-center gap-2 group/btn"
+                                data-name="Spicy Pepperoni" data-price="22.00" data-size="Large" data-img="https://lh3.googleusercontent.com/aida-public/AB6AXuBlHNFMiQoAsg02SiyjgojNj-mTvwXFL8x23MzobJK7gbRJZfWePdSly7P19eif_NsamtwYp8oJaV5hGNrs8lsNogfsMNJF3yJG4tyeXEgA1mXzEpcajmlC75W-uIN7U-h0oPg5pQGbpXh4SFk-L4Qz22JySuVInooyHrn1esKrSE3o7ArFGHyBZfWemcQ4YnKSLvlUrFm4QXouDfv8i7B6oXNQVR3az_oZsqseX5JTQpxVoqA9fjIxulFhKCVXTTb9tsrWZBzRP3Us">
+                                <i data-lucide="plus" class="w-5 h-5 group-hover/btn:rotate-90 transition-transform"></i>
+                                Add to Order
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Pesto Burrata -->
+                    <div class="bg-white rounded-3xl overflow-hidden shadow-xl shadow-orange-100/20 group hover:-translate-y-2 transition-transform duration-300">
+                        <div class="h-64 overflow-hidden relative">
+                            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8Ag1BX3__fXl18bPamr6E9BXG2-IfDLsIV4uEMMlM6R5qcqYJNcd2gHruloG9UbCm3RKM1nfU00JU3lPzkvTLVp_v4evdL1Oa80e8gmzeqBb5IMomNAljCV_JCEtS0tMCXScmo_Suu5k6_G9f8jq0MA5NGxXoRA_Q_Nd9yzEu1hZSamWoPVT46hdqxGcIdAjpbU6cWR_lvX00ZO5GK-04186opgLFj271IqwPAgOkCtEjyEagaxScDzRXKTIjdl8i0xSX7Y-2El6C" alt="Pesto Burrata">
+                            <span class="absolute top-4 left-4 bg-charcoal text-white text-[10px] uppercase font-black px-3 py-1 rounded-full tracking-tighter">Premium</span>
+                        </div>
+                        <div class="p-8">
+                            <div class="flex justify-between items-start mb-4">
+                                <div>
+                                    <h3 class="text-2xl font-bold mb-1">Pesto Burrata</h3>
+                                    <p class="text-gray-400 text-xs">Fresh Burrata • Basil Pesto • Pine Nuts</p>
+                                </div>
+                                <span class="text-2xl font-black text-primary">$26</span>
+                            </div>
+                            <button class="add-to-cart w-full bg-charcoal text-white py-4 rounded-2xl font-bold hover:bg-primary transition-all flex items-center justify-center gap-2 group/btn"
+                                data-name="Pesto Burrata" data-price="26.00" data-size="Large" data-img="https://lh3.googleusercontent.com/aida-public/AB6AXuC8Ag1BX3__fXl18bPamr6E9BXG2-IfDLsIV4uEMMlM6R5qcqYJNcd2gHruloG9UbCm3RKM1nfU00JU3lPzkvTLVp_v4evdL1Oa80e8gmzeqBb5IMomNAljCV_JCEtS0tMCXScmo_Suu5k6_G9f8jq0MA5NGxXoRA_Q_Nd9yzEu1hZSamWoPVT46hdqxGcIdAjpbU6cWR_lvX00ZO5GK-04186opgLFj271IqwPAgOkCtEjyEagaxScDzRXKTIjdl8i0xSX7Y-2El6C">
+                                <i data-lucide="plus" class="w-5 h-5 group-hover/btn:rotate-90 transition-transform"></i>
+                                Add to Order
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Category: Uganda Specials -->
+            <section class="mb-20">
+                <div class="flex items-center gap-4 mb-10">
+                    <h2 class="text-3xl font-bold">Ugandan <span class="text-primary">Fusion</span> Specials</h2>
+                    <div class="h-[2px] flex-1 bg-orange-100"></div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Nile Perch Smoked -->
+                    <div class="bg-charcoal text-white rounded-[2.5rem] overflow-hidden flex flex-col md:flex-row shadow-2xl group">
+                        <div class="md:w-1/2 h-64 md:h-auto overflow-hidden">
+                            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBICn8hLj4aAqDP6UyIFrWmscgXIB_SpZfazsSEtoZEec0ucWmZLeUoio1zrUUlEEtfeFtwvmxWdspGUBjz_rdKvS6e_jPUU2dALr_R9rX3b6HBYPU-1rHxAzZOOv0fi4hiE2kdO-X9Yg0gKwfoUUjgWV7ZIvKR-EwQXaWBn-qiJB3LmtNCmisp92fY4uzjIC5g1e3qXRA4Gqh9iDG8_NNHPpoxQv_z227jOPpe-pca2jxWuK5XPbAjFIlZotka_3t5ZOLMNnjeu5xK" alt="Nile Perch Pizza">
+                        </div>
+                        <div class="md:w-1/2 p-10 flex flex-col justify-center">
+                            <h3 class="text-3xl font-bold mb-2">Smoke & Water</h3>
+                            <p class="text-gray-400 text-sm mb-6 uppercase tracking-widest font-bold">Nile Perch • Capers • Dill Oil</p>
+                            <p class="text-gray-500 text-sm mb-8 leading-relaxed">A specialized fusion using local smoked Nile Perch from Jinja, paired with AI-driven herb oil for a unique marine taste profile.</p>
+                            <div class="flex justify-between items-center mt-auto">
+                                <span class="text-3xl font-black text-primary">$28</span>
+                                <button class="add-to-cart p-4 bg-primary text-white rounded-2xl hover:bg-orange-600 transition-colors shadow-lg shadow-primary/20"
+                                    data-name="Smoke & Water" data-price="28.00" data-size="Large" data-img="...">
+                                    <i data-lucide="shopping-cart" class="w-6 h-6"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Rolex Pizza -->
+                    <div class="bg-charcoal text-white rounded-[2.5rem] overflow-hidden flex flex-col md:flex-row shadow-2xl group">
+                        <div class="md:w-1/2 h-64 md:h-auto overflow-hidden">
+                            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKV720y5UcCBjTLGVwdg9MugnGSiTpbC2oTj516P3YDl10EkDe9PfLxrWU31ZBAP-cuFOkOfNVRwYGaGgdxh8Wnn8asCZxPfLaWhQLIqNpM2wfm6KyBD0sx7glosfcKj6GucEgw8DhxIxRMAyGeAZ2-X-tzd73IEMXbMt07A4bZCsO8q72FXvIn_46ejB1K4qa9h1QpYo0dTauOgdtWzDkXpE8aFvSmH5bBHNzIY7sOPA7RRBOZNioom-2k9YcWMwseqjxk9UbQvUI" alt="Rolex Pizza">
+                        </div>
+                        <div class="md:w-1/2 p-10 flex flex-col justify-center">
+                            <h3 class="text-3xl font-bold mb-2">The Rolex Elite</h3>
+                            <p class="text-gray-400 text-sm mb-6 uppercase tracking-widest font-bold">Kampala Street Style • Eggs • Peppers</p>
+                            <p class="text-gray-500 text-sm mb-8 leading-relaxed">Inspired by the iconic Ugandan Rolex. Our algorithm reimagines the vegetable omelette into a artisanal thin-crust experience.</p>
+                            <div class="flex justify-between items-center mt-auto">
+                                <span class="text-3xl font-black text-primary">$18</span>
+                                <button class="add-to-cart p-4 bg-primary text-white rounded-2xl hover:bg-orange-600 transition-colors shadow-lg shadow-primary/20"
+                                    data-name="The Rolex Elite" data-price="18.00" data-size="Regular" data-img="...">
+                                    <i data-lucide="shopping-cart" class="w-6 h-6"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
     </main>
 
