@@ -1,0 +1,188 @@
+<!-- Artisan Pizza AI - Checkout -->
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Checkout - Artisan Pizza AI</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec5b13",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221610",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+    <div class="max-w-6xl mx-auto px-4 md:px-8 py-6">
+        <!-- Header -->
+        <header class="flex items-center justify-between border-b border-primary/10 pb-6 mb-8">
+            <div class="flex items-center gap-3">
+                <div class="bg-primary p-2 rounded-lg text-white">
+                    <span class="material-symbols-outlined text-2xl">local_pizza</span>
+                </div>
+                <h1 class="text-2xl font-black tracking-tight text-slate-900 dark:text-white">Artisan Pizza <span class="text-primary">AI</span></h1>
+            </div>
+            <a class="flex items-center gap-2 text-sm font-semibold text-primary hover:opacity-80 transition-opacity" href="index.html">
+                <span class="material-symbols-outlined text-base">arrow_back</span>
+                Back to Menu
+            </a>
+        </header>
+        <main class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+            <!-- Left Column: Delivery & Payment -->
+            <div class="lg:col-span-7 space-y-10">
+                <!-- Delivery Section -->
+                <section>
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="material-symbols-outlined text-primary">local_shipping</span>
+                        <h2 class="text-xl font-bold">Delivery Information</h2>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="md:col-span-2">
+                            <label class="block text-sm font-semibold mb-2 opacity-70">Full Name</label>
+                            <input class="w-full px-4 py-3 rounded-xl border border-primary/20 bg-white dark:bg-slate-800 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all" placeholder="John Doe" type="text"/>
+                        </div>
+                        <div class="md:col-span-2">
+                            <label class="block text-sm font-semibold mb-2 opacity-70">Delivery Address</label>
+                            <input class="w-full px-4 py-3 rounded-xl border border-primary/20 bg-white dark:bg-slate-800 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all" placeholder="123 Artisan Way, Flavor Town" type="text"/>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold mb-2 opacity-70">Phone Number</label>
+                            <input class="w-full px-4 py-3 rounded-xl border border-primary/20 bg-white dark:bg-slate-800 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all" placeholder="+1 (555) 000-0000" type="tel"/>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold mb-2 opacity-70">Apartment/Suite</label>
+                            <input class="w-full px-4 py-3 rounded-xl border border-primary/20 bg-white dark:bg-slate-800 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all" placeholder="Apt 4B" type="text"/>
+                        </div>
+                    </div>
+                </section>
+                <!-- Payment Section -->
+                <section>
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="material-symbols-outlined text-primary">payments</span>
+                        <h2 class="text-xl font-bold">Payment Method</h2>
+                    </div>
+                    <div class="space-y-3">
+                        <label class="flex items-center p-4 rounded-xl border-2 border-primary bg-primary/5 cursor-pointer">
+                            <input checked="" class="text-primary focus:ring-primary h-4 w-4" name="payment" type="radio"/>
+                            <div class="ml-4 flex-1 flex justify-between items-center">
+                                <span class="font-bold">Credit or Debit Card</span>
+                                <div class="flex gap-2">
+                                    <span class="material-symbols-outlined opacity-60">credit_card</span>
+                                </div>
+                            </div>
+                        </label>
+                        <div class="p-4 rounded-xl bg-white dark:bg-slate-800 border border-primary/10 space-y-4">
+                            <input class="w-full px-4 py-3 rounded-lg border border-primary/10 bg-background-light dark:bg-slate-900 focus:ring-1 focus:ring-primary outline-none" placeholder="Card Number" type="text"/>
+                            <div class="flex gap-4">
+                                <input class="w-1/2 px-4 py-3 rounded-lg border border-primary/10 bg-background-light dark:bg-slate-900 focus:ring-1 focus:ring-primary outline-none" placeholder="MM/YY" type="text"/>
+                                <input class="w-1/2 px-4 py-3 rounded-lg border border-primary/10 bg-background-light dark:bg-slate-900 focus:ring-1 focus:ring-primary outline-none" placeholder="CVV" type="text"/>
+                            </div>
+                        </div>
+                        <label class="flex items-center p-4 rounded-xl border border-primary/10 bg-white dark:bg-slate-800 cursor-pointer hover:bg-primary/5 transition-colors">
+                            <input class="text-primary focus:ring-primary h-4 w-4" name="payment" type="radio"/>
+                            <div class="ml-4 flex-1 flex justify-between items-center">
+                                <span class="font-bold">Digital Wallet</span>
+                                <span class="material-symbols-outlined opacity-60">account_balance_wallet</span>
+                            </div>
+                        </label>
+                    </div>
+                </section>
+            </div>
+            <!-- Right Column: Order Summary -->
+            <div class="lg:col-span-5">
+                <div class="bg-white dark:bg-slate-800 rounded-3xl p-8 shadow-xl shadow-primary/5 sticky top-8">
+                    <h2 class="text-xl font-bold mb-6">Order Summary</h2>
+                    <!-- Items -->
+                    <div class="space-y-6 mb-8">
+                        <div class="flex gap-4">
+                            <div class="w-20 h-20 rounded-2xl overflow-hidden flex-shrink-0">
+                                <img class="w-full h-full object-cover" alt="Fresh Margherita pizza" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBICn8hLj4aAqDP6UyIFrWmscgXIB_SpZfazsSEtoZEec0ucWmZLeUoio1zrUUlEEtfeFtwvmxWdspGUBjz_rdKvS6e_jPUU2dALr_R9rX3b6HBYPU-1rHxAzZOOv0fi4hiE2kdO-X9Yg0gKwfoUUjgWV7ZIvKR-EwQXaWBn-qiJB3LmtNCmisp92fY4uzjIC5g1e3qXRA4Gqh9iDG8_NNHPpoxQv_z227jOPpe-pca2jxWuK5XPbAjFIlZotka_3t5ZOLMNnjeu5xK"/>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex justify-between items-start">
+                                    <h3 class="font-bold">Margherita Pizza</h3>
+                                    <span class="font-bold text-primary">$18.00</span>
+                                </div>
+                                <p class="text-xs opacity-60 mt-1">Large • Classic Crust</p>
+                                <div class="flex items-center gap-2 mt-2">
+                                    <button class="w-6 h-6 rounded-full border border-primary/20 flex items-center justify-center text-primary"><span class="material-symbols-outlined text-sm">remove</span></button>
+                                    <span class="text-sm font-bold">1</span>
+                                    <button class="w-6 h-6 rounded-full border border-primary/20 flex items-center justify-center text-primary"><span class="material-symbols-outlined text-sm">add</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-20 h-20 rounded-2xl overflow-hidden flex-shrink-0">
+                                <img class="w-full h-full object-cover" alt="Gourmet truffle mushroom pizza" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKV720y5UcCBjTLGVwdg9MugnGSiTpbC2oTj516P3YDl10EkDe9PfLxrWU31ZBAP-cuFOkOfNVRwYGaGgdxh8Wnn8asCZxPfLaWhQLIqNpM2wfm6KyBD0sx7glosfcKj6GucEgw8DhxIxRMAyGeAZ2-X-tzd73IEMXbMt07A4bZCsO8q72FXvIn_46ejB1K4qa9h1QpYo0dTauOgdtWzDkXpE8aFvSmH5bBHNzIY7sOPA7RRBOZNioom-2k9YcWMwseqjxk9UbQvUI"/>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex justify-between items-start">
+                                    <h3 class="font-bold">Truffle Mushroom</h3>
+                                    <span class="font-bold text-primary">$24.00</span>
+                                </div>
+                                <p class="text-xs opacity-60 mt-1">Medium • Gluten Free</p>
+                                <div class="flex items-center gap-2 mt-2">
+                                    <button class="w-6 h-6 rounded-full border border-primary/20 flex items-center justify-center text-primary"><span class="material-symbols-outlined text-sm">remove</span></button>
+                                    <span class="text-sm font-bold">1</span>
+                                    <button class="w-6 h-6 rounded-full border border-primary/20 flex items-center justify-center text-primary"><span class="material-symbols-outlined text-sm">add</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Totals -->
+                    <div class="space-y-3 border-t border-primary/10 pt-6 mb-8">
+                        <div class="flex justify-between text-sm">
+                            <span class="opacity-60">Subtotal</span>
+                            <span class="font-semibold">$42.00</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="opacity-60">Delivery Fee</span>
+                            <span class="font-semibold text-green-600">Free</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="opacity-60">Estimated Taxes</span>
+                            <span class="font-semibold">$3.36</span>
+                        </div>
+                        <div class="flex justify-between text-xl font-black pt-2">
+                            <span>Total</span>
+                            <span class="text-primary">$45.36</span>
+                        </div>
+                    </div>
+                    <!-- Action Button -->
+                    <button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-2xl shadow-lg shadow-primary/30 flex items-center justify-center gap-2 transition-transform active:scale-[0.98]">
+                        <span class="material-symbols-outlined">lock</span>
+                        Place Order • $45.36
+                    </button>
+                    <p class="text-center text-[10px] opacity-40 mt-4 px-4 uppercase tracking-widest font-bold">
+                        Secure SSL Encryption Guaranteed
+                    </p>
+                </div>
+            </div>
+        </main>
+        <!-- Footer -->
+        <footer class="mt-20 py-8 border-t border-primary/10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm opacity-50">
+            <p>© 2024 Artisan Pizza AI. All rights reserved.</p>
+            <div class="flex gap-6">
+                <a class="hover:text-primary" href="#">Terms of Service</a>
+                <a class="hover:text-primary" href="#">Privacy Policy</a>
+            </div>
+        </footer>
+    </div>
+    <script src="js/checkout.js"></script>
+</body>
+</html>

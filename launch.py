@@ -43,10 +43,10 @@ def main():
     # Wait for backend to start
     time.sleep(3)
     
-    # Start Streamlit frontend
-    print("[2/2] Starting Streamlit frontend on http://localhost:8501...")
+    # Start Frontend (Static File Server)
+    print(f"[2/2] Starting Static Frontend on http://localhost:3000...")
     frontend_process = subprocess.Popen(
-        [sys.executable, "-m", "streamlit", "run", "streamlit/app.py"],
+        [sys.executable, "-m", "http.server", "3000", "--directory", "frontend"],
         cwd=project_root
     )
     processes.append(frontend_process)
@@ -55,7 +55,7 @@ def main():
     print("Application is running!")
     print("=" * 60)
     print("\nBackend API:  http://localhost:8000")
-    print("Frontend UI:  http://localhost:8501")
+    print("Frontend UI:  http://localhost:3000")
     print("API Docs:     http://localhost:8000/docs")
     print("\nPress Ctrl+C to stop all services\n")
     

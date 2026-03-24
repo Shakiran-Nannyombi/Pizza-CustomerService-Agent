@@ -41,3 +41,36 @@ class ToolsResponse(BaseModel):
     """Response model for tools endpoint"""
     tools: List[Tool]
     success: bool = True
+
+
+class OrderItem(BaseModel):
+    """Model for an item in an order"""
+    name: str
+    size: str
+    quantity: int
+    price: float
+    customizations: str
+
+
+class OrderData(BaseModel):
+    """Model for complete order data"""
+    order_id: str
+    customer_name: str
+    customer_phone: str
+    customer_address: Optional[str] = None
+    order_type: str
+    items: List[OrderItem]
+    subtotal: str
+    tax: str
+    delivery_fee: str
+    total: str
+    status: str
+    special_instructions: str
+    created_at: str
+
+
+class OrderResponse(BaseModel):
+    """Response model for order endpoint"""
+    success: bool
+    message: Optional[str] = None
+    order: Optional[OrderData] = None

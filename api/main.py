@@ -19,8 +19,10 @@ from api.models import (
     StatusResponse,
     ResetResponse,
     ToolsResponse,
-    Tool
+    Tool,
+    OrderResponse
 )
+from pizza_agent.tools.order_management import review_current_order as get_order_summary
 
 
 # Initialize FastAPI app
@@ -143,8 +145,29 @@ async def get_tools():
         Tool(name="calculate_order_total", description="Calculate total order cost"),
         Tool(name="get_estimated_delivery_time", description="Get estimated delivery time")
     ]
-    
     return ToolsResponse(tools=tools)
+
+
+@app.get("/order", response_model=OrderResponse)
+async def get_order():
+    """Get the current order summary"""
+    try:
+        result = get_order_summary()
+        if result['success']:
+            return OrderResponse(
+                success=True,
+                order=result['order']
+            )
+        else:
+            return OrderResponse(
+                success=False,
+                message=result['message']
+            )
+    except Exception as e:
+        return OrderResponse(
+            success=False,
+            message=str(e)
+        )
 
 
 if __name__ == "__main__":
