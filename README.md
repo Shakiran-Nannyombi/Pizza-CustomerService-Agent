@@ -9,7 +9,8 @@
 </p>
 
 <p align="center">
-  <a href="https://pizza-customerservice-agent.streamlit.app/">Live Dashboard</a> •
+  <a href="https://shakiran-nannyombi.github.io/Pizza-CustomerService-Agent/">Live Frontend</a> •
+  <a href="https://pizza-customerservice-agent.streamlit.app/">Live AI Dashboard</a> •
   <a href="#project-structure">Architecture</a> •
   <a href="#local-setup">Setup Guide</a>
 </p>
