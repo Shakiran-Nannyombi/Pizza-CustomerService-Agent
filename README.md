@@ -53,7 +53,15 @@ Artisan Pizza AI is a premium, AI-driven platform designed to revolutionize the 
 ### GitHub Pages (Frontend)
 The project includes a GitHub Action for automated deployment.
 1. Push to the `main` branch.
-2. In Repository Settings → Pages, set Source to "GitHub Actions".
+2. **CRITICAL**: In Repository Settings → Pages:
+   - Under "Build and deployment" > **Source**, select **"GitHub Actions"**.
+   - (Success depends on this being set to Actions, not "Deploy from a branch").
+
+### Troubleshooting Deployment
+If you see a `Get Pages site failed` error in GitHub Actions:
+- Ensure **GitHub Actions** is selected as the source in **Settings > Pages**.
+- Ensure the repository is **Public** (or you have a GitHub Pro/Team account for private Pages).
+- Trigger a new push to `frontend/` to re-run the workflow.
 
 ### Streamlit Cloud (Dashboard)
 1. Link your repo to Streamlit Cloud.
