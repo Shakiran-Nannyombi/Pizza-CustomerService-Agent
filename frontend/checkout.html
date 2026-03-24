@@ -5,34 +5,7 @@
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>Checkout - Artisan Pizza AI</title>
-    <script>
-        tailwind.config = {
-          theme: {
-            extend: {
-              colors: {
-                primary: '#FF6B35',
-                cream: '#FFF8E7',
-                charcoal: '#262626',
-              },
-              fontFamily: {
-                sans: ['Inter', 'sans-serif'],
-                serif: ['Playfair Display', 'serif'],
-              }
-            }
-          }
-        }
-    </script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap');
-        body { font-family: 'Inter', sans-serif; background-color: #FFF8E7; color: #262626; }
-        h1, h2, h3 { font-family: 'Playfair Display', serif; }
-        
-        /* Chatbot Styles */
-        .chat-panel { transition: transform 0.3s ease-in-out; box-shadow: -4px 0 15px rgba(0,0,0,0.1); }
-        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
-        .custom-scrollbar::-webkit-scrollbar-thumb { background: #FF6B35; border-radius: 10px; }
-        #chat-window.hidden { display: none; }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
@@ -41,7 +14,7 @@
         <header class="flex items-center justify-between border-b border-primary/10 pb-6 mb-8 mt-4">
             <div class="flex items-center gap-3">
                 <div class="bg-primary p-2 rounded-lg text-white">
-                    <i data-lucide="pizza" class="w-8 h-8"></i>
+                    <img src="assets/logo.svg" alt="Logo" class="w-8 h-8">
                 </div>
                 <h1 class="text-2xl font-black tracking-tight text-charcoal">Artisan Pizza <span class="text-primary">AI</span></h1>
             </div>

@@ -5,23 +5,14 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>Locations - Artisan Pizza AI</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <script>
-        tailwind.config = { theme: { extend: { colors: { primary: '#FF6B35', cream: '#FFF8E7', charcoal: '#262626' } } } }
-    </script>
-    <style>
-        /* Chatbot Styles */
-        .chat-panel { transition: transform 0.3s ease-in-out; box-shadow: -4px 0 15px rgba(0,0,0,0.1); }
-        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
-        .custom-scrollbar::-webkit-scrollbar-thumb { background: #FF6B35; border-radius: 10px; }
-        #chat-window.hidden { display: none; }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body class="bg-cream font-sans">
     <header class="fixed top-0 w-full bg-cream/90 backdrop-blur-sm z-40 border-b border-orange-100">
         <div class="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
             <a href="index.html" class="flex items-center gap-2">
-                <i data-lucide="pizza" class="text-primary w-8 h-8"></i>
+                <img src="assets/logo.svg" alt="Logo" class="w-10 h-10">
                 <span class="font-bold text-xl tracking-tight uppercase">Artisan Pizza AI</span>
             </a>
             <nav class="hidden md:flex items-center gap-8 font-semibold text-sm uppercase tracking-wider">

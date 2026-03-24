@@ -1,0 +1,71 @@
+/* Artisan Pizza AI - Global Styles */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap');
+
+:root {
+    --primary: #FF6B35;
+    --cream: #FFF8E7;
+    --charcoal: #262626;
+    --white: #ffffff;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--cream);
+    color: var(--charcoal);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+}
+
+/* Custom Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 10px;
+}
+
+/* Chatbot Interface */
+.chat-panel {
+    transition: transform 0.3s ease-in-out;
+    box-shadow: -4px 0 15px rgba(0,0,0,0.1);
+}
+
+#chat-window.hidden {
+    display: none;
+}
+
+/* Animations */
+@keyframes float {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(10deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+}
+
+.sticker {
+    position: absolute;
+    font-size: 3rem;
+    animation: float 4s ease-in-out infinite;
+    filter: drop-shadow(0 5px 15px rgba(0,0,0,0.2));
+    pointer-events: none;
+    z-index: 20;
+}
+
+.animate-in {
+    animation: animate-in 0.3s ease-out;
+}
+
+@keyframes animate-in {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Utility Classes */
+.bg-cream { background-color: var(--cream); }
+.bg-charcoal { background-color: var(--charcoal); }
+.text-primary { color: var(--primary); }
+.border-primary { border-color: var(--primary); }

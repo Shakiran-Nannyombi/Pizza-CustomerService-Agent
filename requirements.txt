@@ -1,19 +1,8 @@
-# Core Dependencies
-openai>=1.25.0
-python-dotenv>=1.0.0
-requests>=2.31.0
-
-# Frontend
-streamlit>=1.30.0
-
-# Backend API
-fastapi>=0.104.0
-uvicorn[standard]>=0.24.0
-pydantic>=2.0.0
-
-# Optional: LangChain (for advanced features)
-langchain>=0.3.0
-langchain-community>=0.3.0
-langchain-core>=1.2.0
-langchain-openai>=1.0.0
-pydantic>=2.0.0
+fastapi
+uvicorn
+pydantic
+openai
+python-dotenv
+streamlit
+groq
+markdown

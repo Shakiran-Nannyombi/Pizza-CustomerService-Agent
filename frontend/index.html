@@ -37,22 +37,7 @@
           font-family: 'Playfair Display', serif;
         }
     </style>
-    <style data-purpose="layout-animations">
-        .chat-panel {
-          transition: transform 0.3s ease-in-out;
-          box-shadow: -4px 0 15px rgba(0,0,0,0.1);
-        }
-        .custom-scrollbar::-webkit-scrollbar {
-          width: 4px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-thumb {
-          background: #FF6B35;
-          border-radius: 10px;
-        }
-        #chat-window.hidden {
-            display: none;
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
     <!-- END: Scripts and Config -->
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
@@ -60,9 +45,8 @@
     <!-- BEGIN: MainHeader -->
     <header class="fixed top-0 w-full bg-cream/90 backdrop-blur-sm z-40 border-b border-orange-100">
         <div class="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
-            <!-- Logo -->
-            <a href="index.html" class="flex items-center gap-2" data-purpose="logo">
-                <i data-lucide="pizza" class="text-primary w-8 h-8"></i>
+            <a href="index.html" class="flex items-center gap-2">
+                <img src="assets/logo.svg" alt="Artisan Pizza AI Logo" class="w-10 h-10">
                 <span class="font-bold text-xl tracking-tight uppercase">Artisan Pizza AI</span>
             </a>
             <!-- Navigation -->
@@ -247,7 +231,7 @@
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
                 <div class="col-span-1 md:col-span-1">
                     <div class="flex items-center gap-2 mb-6">
-                        <i data-lucide="pizza" class="text-primary w-8 h-8"></i>
+                        <img src="assets/logo.svg" alt="Logo" class="w-8 h-8">
                         <span class="font-bold text-xl tracking-tight uppercase">Artisan Pizza AI</span>
                     </div>
                     <p class="text-gray-400 text-sm leading-relaxed">Crafting digital flavors and real wood-fired experiences since 2024. The future of pizza is here.</p>
