@@ -9,37 +9,36 @@ document.addEventListener('DOMContentLoaded', async () => {
     // API Configuration
     const API_BASE_URL = 'http://localhost:8000';
 
-    async function fetchOrder() {
-        try {
-            const response = await fetch(`${API_BASE_URL}/order`);
-            const data = await response.json();
-            if (data.success && data.order) {
-                renderOrder(data.order);
-            } else {
-                console.log('No active order found or error:', data.message);
-                // Optionally show a message that cart is empty
-            }
-        } catch (error) {
-            console.error('Error fetching order:', error);
-        }
-    }
+    // Get Cart from Local Storage
+    let cart = JSON.parse(localStorage.getItem('pizza_cart')) || [];
 
-    function renderOrder(order) {
-        // Clear existing static items
+    function renderOrder() {
+        if (!orderItemsContainer) return;
+        
         orderItemsContainer.innerHTML = '';
+        let subtotal = 0;
 
-        order.items.forEach(item => {
+        if (cart.length === 0) {
+            orderItemsContainer.innerHTML = '<p class="text-gray-500 text-center py-8">Your cart is empty.</p>';
+            updateTotals(0);
+            return;
+        }
+
+        cart.forEach(item => {
+            const itemTotal = item.price * item.quantity;
+            subtotal += itemTotal;
+
             const itemHtml = `
-                <div class="flex gap-4">
-                    <div class="w-20 h-20 rounded-2xl overflow-hidden flex-shrink-0 bg-orange-50 flex items-center justify-center text-4xl">
-                        ${getEmoji(item.name)}
+                <div class="flex gap-4 items-center">
+                    <div class="w-20 h-20 rounded-2xl overflow-hidden flex-shrink-0 bg-orange-50 flex items-center justify-center">
+                        <i data-lucide="pizza" class="w-10 h-10 text-primary"></i>
                     </div>
                     <div class="flex-1">
                         <div class="flex justify-between items-start">
                             <h3 class="font-bold">${item.name}</h3>
-                            <span class="font-bold text-primary">$${(item.price * item.quantity).toFixed(2)}</span>
+                            <span class="font-bold text-primary">$${itemTotal.toFixed(2)}</span>
                         </div>
-                        <p class="text-xs opacity-60 mt-1">${item.size} • ${item.customizations || 'Standard'}</p>
+                        <p class="text-xs opacity-60 mt-1">${item.size || 'Standard'}</p>
                         <div class="flex items-center gap-2 mt-2">
                             <span class="text-sm font-bold">Qty: ${item.quantity}</span>
                         </div>
@@ -49,27 +48,25 @@ document.addEventListener('DOMContentLoaded', async () => {
             orderItemsContainer.insertAdjacentHTML('beforeend', itemHtml);
         });
 
-        // Update totals
-        subtotalEl.textContent = order.subtotal;
-        deliveryFeeEl.textContent = order.delivery_fee === '$0.00' ? 'Free' : order.delivery_fee;
-        taxEl.textContent = order.tax;
-        totalEl.textContent = order.total;
-        
-        if (placeOrderBtn) {
-            placeOrderBtn.innerHTML = `<span class="material-symbols-outlined">lock</span> Place Order • ${order.total}`;
-        }
+        updateTotals(subtotal);
+        if (window.lucide) lucide.createIcons();
     }
 
-    function getEmoji(name) {
-        const n = name.toLowerCase();
-        if (n.includes('margherita')) return '🍅';
-        if (n.includes('pepperoni')) return '🍕';
-        if (n.includes('mushroom') || n.includes('truffle')) return '🍄';
-        if (n.includes('pesto') || n.includes('veggie')) return '🌿';
-        if (n.includes('chicken')) return '🍗';
-        if (n.includes('meat')) return '🥩';
-        if (n.includes('hawaiian')) return '🍍';
-        return '🍕';
+    function updateTotals(subtotal) {
+        const deliveryFee = subtotal > 0 ? 5.00 : 0;
+        const tax = subtotal * 0.08;
+        const total = subtotal + deliveryFee + tax;
+
+        subtotalEl.textContent = `$${subtotal.toFixed(2)}`;
+        deliveryFeeEl.textContent = deliveryFee === 0 ? '$0.00' : `$${deliveryFee.toFixed(2)}`;
+        taxEl.textContent = `$${tax.toFixed(2)}`;
+        totalEl.textContent = `$${total.toFixed(2)}`;
+        
+        if (placeOrderBtn) {
+            placeOrderBtn.innerHTML = `Place Order • $${total.toFixed(2)}`;
+            placeOrderBtn.disabled = cart.length === 0;
+            if (cart.length === 0) placeOrderBtn.classList.add('opacity-50', 'cursor-not-allowed');
+        }
     }
 
     // Handle Place Order
@@ -84,6 +81,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 const data = await response.json();
                 if (data.success) {
                     alert('Order Placed Successfully! ' + data.response);
+                    localStorage.removeItem('pizza_cart');
                     window.location.href = 'index.html';
                 }
             } catch (error) {
@@ -92,5 +90,5 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     }
 
-    fetchOrder();
+    renderOrder();
 });

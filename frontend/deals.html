@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Deals - Artisan Pizza AI</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+          theme: { extend: { colors: { primary: '#FF6B35', cream: '#FFF8E7', charcoal: '#262626' }, fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Playfair Display', 'serif'] } } }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #FFF8E7; color: #262626; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+        
+        /* Chatbot Styles */
+        .chat-panel { transition: transform 0.3s ease-in-out; box-shadow: -4px 0 15px rgba(0,0,0,0.1); }
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #FF6B35; border-radius: 10px; }
+        #chat-window.hidden { display: none; }
+    </style>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-cream">
+    <header class="fixed top-0 w-full bg-cream/90 backdrop-blur-sm z-40 border-b border-orange-100">
+        <div class="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2">
+                <i data-lucide="pizza" class="text-primary w-8 h-8"></i>
+                <span class="font-bold text-xl tracking-tight uppercase">Artisan Pizza AI</span>
+            </a>
+            <nav class="hidden md:flex items-center gap-8 font-semibold text-sm uppercase tracking-wider">
+                <a class="hover:text-primary transition-colors" href="menu.html">Menu</a>
+                <a class="text-primary transition-colors" href="deals.html">Deals</a>
+                <a class="hover:text-primary transition-colors" href="locations.html">Locations</a>
+                <a class="hover:text-primary transition-colors" href="about.html">About</a>
+            </nav>
+            <button id="cart-btn" class="relative p-2 hover:bg-orange-100 rounded-full transition-colors">
+                <i data-lucide="shopping-cart" class="h-6 w-6"></i>
+                <span id="cart-count" class="absolute top-1 right-1 bg-primary text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center">0</span>
+            </button>
+        </div>
+    </header>
+
+    <main class="pt-32 pb-20 px-4">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-5xl font-bold mb-12 text-center">Todays Special Deals</h1>
+            
+            <div class="space-y-6">
+                <div class="bg-white p-8 rounded-3xl shadow-lg border-2 border-primary flex flex-col md:flex-row justify-between items-center gap-6">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-2">BOGO Monday</h3>
+                        <p class="text-gray-600">Buy one large specialty pizza, get a margherita for free!</p>
+                    </div>
+                    <button class="bg-primary text-white px-8 py-3 rounded-xl font-bold hover:bg-orange-600 transition-colors whitespace-nowrap">Claim Deal</button>
+                </div>
+
+                <div class="bg-white p-8 rounded-3xl shadow-lg border border-orange-100 flex flex-col md:flex-row justify-between items-center gap-6">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-2">Family Feast</h3>
+                        <p class="text-gray-600">2 Large Pizzas + 4 Drinks + Garlic Knots for set price.</p>
+                    </div>
+                    <button class="bg-charcoal text-white px-8 py-3 rounded-xl font-bold hover:bg-primary transition-colors whitespace-nowrap">View Bundle</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Chatbot Interface -->
+    <div class="fixed bottom-0 right-0 z-50 flex flex-col items-end p-6">
+        <div class="chat-panel hidden w-[400px] h-[600px] bg-white rounded-3xl mb-6 overflow-hidden flex flex-col shadow-2xl border border-orange-100" id="chat-window">
+            <div class="bg-primary p-4 text-white flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
+                        <i data-lucide="pizza" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <p class="font-bold leading-none">Pizza AI</p>
+                        <p class="text-xs text-orange-100 mt-1">Taste Assistant Online</p>
+                    </div>
+                </div>
+                <button id="close-chat" class="p-2 hover:bg-white/10 rounded-full transition-colors">
+                    <i data-lucide="x" class="h-5 w-5"></i>
+                </button>
+            </div>
+            <div id="chat-history" class="flex-1 overflow-y-auto p-4 space-y-4 custom-scrollbar bg-slate-50"></div>
+            <div class="p-4 bg-white border-t">
+                <form id="chat-form" class="relative flex items-center">
+                    <input id="chat-input" class="w-full pl-4 pr-12 py-3 bg-gray-100 border-none rounded-2xl text-sm focus:ring-2 focus:ring-primary/50" placeholder="Type your message..." type="text"/>
+                    <button type="submit" class="absolute right-2 p-2 text-primary hover:text-orange-700 transition-colors">
+                        <i data-lucide="send" class="h-6 w-6"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+        <button id="chat-toggle" class="w-16 h-16 bg-primary text-white rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all">
+            <i data-lucide="message-circle" class="w-8 h-8"></i>
+        </button>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>

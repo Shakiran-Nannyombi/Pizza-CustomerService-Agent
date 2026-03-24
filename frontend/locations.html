@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Locations - Artisan Pizza AI</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = { theme: { extend: { colors: { primary: '#FF6B35', cream: '#FFF8E7', charcoal: '#262626' } } } }
+    </script>
+    <style>
+        /* Chatbot Styles */
+        .chat-panel { transition: transform 0.3s ease-in-out; box-shadow: -4px 0 15px rgba(0,0,0,0.1); }
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #FF6B35; border-radius: 10px; }
+        #chat-window.hidden { display: none; }
+    </style>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-cream font-sans">
+    <header class="fixed top-0 w-full bg-cream/90 backdrop-blur-sm z-40 border-b border-orange-100">
+        <div class="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2">
+                <i data-lucide="pizza" class="text-primary w-8 h-8"></i>
+                <span class="font-bold text-xl tracking-tight uppercase">Artisan Pizza AI</span>
+            </a>
+            <nav class="hidden md:flex items-center gap-8 font-semibold text-sm uppercase tracking-wider">
+                <a class="hover:text-primary transition-colors" href="menu.html">Menu</a>
+                <a class="hover:text-primary transition-colors" href="deals.html">Deals</a>
+                <a class="text-primary transition-colors" href="locations.html">Locations</a>
+                <a class="hover:text-primary transition-colors" href="about.html">About</a>
+            </nav>
+            <button id="cart-btn" class="relative p-2 hover:bg-orange-100 rounded-full">
+                <i data-lucide="shopping-cart" class="h-6 w-6"></i>
+                <span id="cart-count" class="absolute top-1 right-1 bg-primary text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center">0</span>
+            </button>
+        </div>
+    </header>
+
+    <main class="pt-32 pb-20 px-4">
+        <div class="max-w-7xl mx-auto">
+            <h1 class="text-5xl font-bold mb-12 text-center" style="font-family: 'Playfair Display', serif;">Find Us</h1>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-3xl shadow-md">
+                    <h3 class="font-bold text-xl mb-2">Brooklyn</h3>
+                    <p class="text-gray-500 text-sm mb-4">123 Artisan Ave, Brooklyn, NY 11201</p>
+                    <div class="flex items-center gap-2 text-primary font-bold text-sm">
+                        <i data-lucide="phone" class="w-4 h-4"></i> (555) 123-4567
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-3xl shadow-md">
+                    <h3 class="font-bold text-xl mb-2">Austin</h3>
+                    <p class="text-gray-500 text-sm mb-4">456 Flavor Way, Austin, TX 78701</p>
+                    <div class="flex items-center gap-2 text-primary font-bold text-sm">
+                        <i data-lucide="phone" class="w-4 h-4"></i> (555) 987-6543
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Chatbot Interface -->
+    <div class="fixed bottom-0 right-0 z-50 flex flex-col items-end p-6">
+        <div class="chat-panel hidden w-[400px] h-[600px] bg-white rounded-3xl mb-6 overflow-hidden flex flex-col shadow-2xl border border-orange-100" id="chat-window">
+            <div class="bg-primary p-4 text-white flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
+                        <i data-lucide="pizza" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <p class="font-bold leading-none">Pizza AI</p>
+                        <p class="text-xs text-orange-100 mt-1">Taste Assistant Online</p>
+                    </div>
+                </div>
+                <button id="close-chat" class="p-2 hover:bg-white/10 rounded-full transition-colors">
+                    <i data-lucide="x" class="h-5 w-5"></i>
+                </button>
+            </div>
+            <div id="chat-history" class="flex-1 overflow-y-auto p-4 space-y-4 custom-scrollbar bg-slate-50"></div>
+            <div class="p-4 bg-white border-t">
+                <form id="chat-form" class="relative flex items-center">
+                    <input id="chat-input" class="w-full pl-4 pr-12 py-3 bg-gray-100 border-none rounded-2xl text-sm focus:ring-2 focus:ring-primary/50" placeholder="Type your message..." type="text"/>
+                    <button type="submit" class="absolute right-2 p-2 text-primary hover:text-orange-700 transition-colors">
+                        <i data-lucide="send" class="h-6 w-6"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+        <button id="chat-toggle" class="w-16 h-16 bg-primary text-white rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all">
+            <i data-lucide="message-circle" class="w-8 h-8"></i>
+        </button>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>

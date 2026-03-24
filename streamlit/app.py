@@ -40,6 +40,29 @@ def main():
         unsafe_allow_html=True
     )
     
+    # Flying Stickers for Streamlit
+    st.markdown("""
+        <style>
+            @keyframes float {
+                0% { transform: translateY(0px) rotate(0deg); }
+                50% { transform: translateY(-20px) rotate(10deg); }
+                100% { transform: translateY(0px) rotate(0deg); }
+            }
+            .st-sticker {
+                position: fixed;
+                font-size: 3rem;
+                animation: float 4s ease-in-out infinite;
+                z-index: 100;
+                pointer-events: none;
+                opacity: 0.6;
+            }
+        </style>
+        <div class="st-sticker" style="top: 10%; left: 5%; animation-delay: 0s;">🍕</div>
+        <div class="st-sticker" style="top: 20%; right: 10%; animation-delay: 1s;">🌿</div>
+        <div class="st-sticker" style="bottom: 15%; left: 15%; animation-delay: 2s;">🌶️</div>
+        <div class="st-sticker" style="bottom: 10%; right: 20%; animation-delay: 1.5s;">🍄</div>
+    """, unsafe_allow_html=True)
+    
     # Check AI mode
     if not is_ai_mode():
         st.error(

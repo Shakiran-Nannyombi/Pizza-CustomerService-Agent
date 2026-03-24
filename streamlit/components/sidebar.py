@@ -68,6 +68,11 @@ def render_sidebar():
         # Links
         st.markdown("---")
         st.markdown("### Resources")
-        st.markdown("[Documentation](../docs/README.md)")
+        st.markdown("[Pizza Menu](http://localhost:3000/menu.html)")
+        st.markdown("[Special Deals](http://localhost:3000/deals.html)")
+        st.markdown("[Our Locations](http://localhost:3000/locations.html)")
+        st.markdown("[About Us](http://localhost:3000/about.html)")
+        st.markdown("---")
+        st.markdown("### Development")
         st.markdown("[Architecture](../docs/ARCHITECTURE.md)")
         st.markdown("[Quick Start](../docs/QUICKSTART.md)")

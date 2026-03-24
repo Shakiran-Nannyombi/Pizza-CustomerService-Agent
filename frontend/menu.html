@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Menu - Artisan Pizza AI</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                primary: '#FF6B35',
+                cream: '#FFF8E7',
+                charcoal: '#262626',
+              },
+              fontFamily: {
+                sans: ['Inter', 'sans-serif'],
+                serif: ['Playfair Display', 'serif'],
+              }
+            }
+          }
+        }
+    </script>
+    <style data-purpose="typography">
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #FFF8E7; color: #262626; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+        
+        /* Chatbot Styles */
+        .chat-panel { transition: transform 0.3s ease-in-out; box-shadow: -4px 0 15px rgba(0,0,0,0.1); }
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #FF6B35; border-radius: 10px; }
+        #chat-window.hidden { display: none; }
+    </style>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-cream text-charcoal">
+    <header class="fixed top-0 w-full bg-cream/90 backdrop-blur-sm z-40 border-b border-orange-100">
+        <div class="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2">
+                <i data-lucide="pizza" class="text-primary w-8 h-8"></i>
+                <span class="font-bold text-xl tracking-tight uppercase">Artisan Pizza AI</span>
+            </a>
+            <nav class="hidden md:flex items-center gap-8 font-semibold text-sm uppercase tracking-wider">
+                <a class="text-primary transition-colors" href="menu.html">Menu</a>
+                <a class="hover:text-primary transition-colors" href="deals.html">Deals</a>
+                <a class="hover:text-primary transition-colors" href="locations.html">Locations</a>
+                <a class="hover:text-primary transition-colors" href="about.html">About</a>
+            </nav>
+            <button id="cart-btn" class="relative p-2 hover:bg-orange-100 rounded-full transition-colors">
+                <i data-lucide="shopping-cart" class="h-6 w-6"></i>
+                <span id="cart-count" class="absolute top-1 right-1 bg-primary text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center">0</span>
+            </button>
+        </div>
+    </header>
+
+    <main class="pt-32 pb-20">
+        <div class="max-w-7xl mx-auto px-4">
+            <h1 class="text-5xl font-bold mb-12 text-center">Our Full Menu</h1>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Menu Item 1 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-lg group">
+                    <div class="h-60 overflow-hidden">
+                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAd59xr1RciSXXP5O38vn9jddxNiBNwcCV0HQ1sAVO_UfAialQ04TDiR1ETSrFsrOOPBhhLtgax_IL5OhhriYc9YKqVvafSJjxd-ppXCJz1nUtxLm3kzILIDjavcYX1z97dxqnhRweCx4OJk3-uWVTeAzreZ5m0_W2vcpSKQogJgfUC9mqh8H-mzxsKozPCfWWKdE34O-ZryGa7WzVfvf6zyPHFPJ-VKqC46y5FrYsvcGza6M8W9lVW1l9BVwI5Od_15T7X5ozVK4dw" alt="Truffle Mushroom">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-xl font-bold">Truffle Mushroom</h3>
+                            <span class="text-primary font-bold">$24</span>
+                        </div>
+                        <p class="text-gray-500 text-sm mb-6">Wild mushrooms, truffle oil, fresh mozzarella.</p>
+                        <button class="add-to-cart w-full bg-charcoal text-white py-3 rounded-xl font-bold hover:bg-primary transition-colors"
+                            data-name="Truffle Mushroom" data-price="24.00" data-size="Large" data-img="...">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Menu Item 2 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-lg group">
+                    <div class="h-60 overflow-hidden">
+                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlHNFMiQoAsg02SiyjgojNj-mTvwXFL8x23MzobJK7gbRJZfWePdSly7P19eif_NsamtwYp8oJaV5hGNrs8lsNogfsMNJF3yJG4tyeXEgA1mXzEpcajmlC75W-uIN7U-h0oPg5pQGbpXh4SFk-L4Qz22JySuVInooyHrn1esKrSE3o7ArFGHyBZfWemcQ4YnKSLvlUrFm4QXouDfv8i7B6oXNQVR3az_oZsqseX5JTQpxVoqA9fjIxulFhKCVXTTb9tsrWZBzRP3Us" alt="Spicy Pepperoni">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-xl font-bold">Spicy Pepperoni</h3>
+                            <span class="text-primary font-bold">$22</span>
+                        </div>
+                        <p class="text-gray-500 text-sm mb-6">Artisanal pepperoni, hot honey, chili flakes.</p>
+                        <button class="add-to-cart w-full bg-charcoal text-white py-3 rounded-xl font-bold hover:bg-primary transition-colors"
+                            data-name="Spicy Pepperoni" data-price="22.00" data-size="Large" data-img="...">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Menu Item 3 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-lg group">
+                    <div class="h-60 overflow-hidden">
+                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8Ag1BX3__fXl18bPamr6E9BXG2-IfDLsIV4uEMMlM6R5qcqYJNcd2gHruloG9UbCm3RKM1nfU00JU3lPzkvTLVp_v4evdL1Oa80e8gmzeqBb5IMomNAljCV_JCEtS0tMCXScmo_Suu5k6_G9f8jq0MA5NGxXoRA_Q_Nd9yzEu1hZSamWoPVT46hdqxGcIdAjpbU6cWR_lvX00ZO5GK-04186opgLFj271IqwPAgOkCtEjyEagaxScDzRXKTIjdl8i0xSX7Y-2El6C" alt="Pesto Burrata">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-xl font-bold">Pesto Burrata</h3>
+                            <span class="text-primary font-bold">$26</span>
+                        </div>
+                        <p class="text-gray-500 text-sm mb-6">Burrata, basil pesto, toasted pine nuts.</p>
+                        <button class="add-to-cart w-full bg-charcoal text-white py-3 rounded-xl font-bold hover:bg-primary transition-colors"
+                            data-name="Pesto Burrata" data-price="26.00" data-size="Large" data-img="...">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Chatbot Interface -->
+    <div class="fixed bottom-0 right-0 z-50 flex flex-col items-end p-6">
+        <div class="chat-panel hidden w-[400px] h-[600px] bg-white rounded-3xl mb-6 overflow-hidden flex flex-col shadow-2xl border border-orange-100" id="chat-window">
+            <div class="bg-primary p-4 text-white flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
+                        <i data-lucide="pizza" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <p class="font-bold leading-none">Pizza AI</p>
+                        <p class="text-xs text-orange-100 mt-1">Taste Assistant Online</p>
+                    </div>
+                </div>
+                <button id="close-chat" class="p-2 hover:bg-white/10 rounded-full transition-colors">
+                    <i data-lucide="x" class="h-5 w-5"></i>
+                </button>
+            </div>
+            <div id="chat-history" class="flex-1 overflow-y-auto p-4 space-y-4 custom-scrollbar bg-slate-50"></div>
+            <div class="p-4 bg-white border-t">
+                <form id="chat-form" class="relative flex items-center">
+                    <input id="chat-input" class="w-full pl-4 pr-12 py-3 bg-gray-100 border-none rounded-2xl text-sm focus:ring-2 focus:ring-primary/50" placeholder="Type your message..." type="text"/>
+                    <button type="submit" class="absolute right-2 p-2 text-primary hover:text-orange-700 transition-colors">
+                        <i data-lucide="send" class="h-6 w-6"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+        <button id="chat-toggle" class="w-16 h-16 bg-primary text-white rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all">
+            <i data-lucide="message-circle" class="w-8 h-8"></i>
+        </button>
+    </div>
+
+    <footer class="bg-charcoal text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p>© 2024 Artisan Pizza AI. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>
