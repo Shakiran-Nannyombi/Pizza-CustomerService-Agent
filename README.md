@@ -9,8 +9,7 @@
 </p>
 
 <p align="center">
-  <a href="https://shakiran-nannyombi.github.io/Pizza-CustomerService-Agent/">Live Frontend</a> •
-  <a href="https://pizza-customerservice-agent.streamlit.app/">Live AI Dashboard</a> •
+  <a href="https://pizza-customer-service-agent.vercel.app/">🍕 Live Site</a> •
   <a href="#project-structure">Architecture</a> •
   <a href="#local-setup">Setup Guide</a>
 </p>
@@ -48,25 +47,14 @@ Artisan Pizza AI is a premium, AI-driven platform designed to revolutionize the 
    - API: http://localhost:8000
    - Streamlit Dashboard: http://localhost:8501
 
-## Deployment Guide
+## Deployment
 
-### GitHub Pages (Frontend)
-The project includes a GitHub Action for automated deployment.
-1. Push to the `main` branch.
-2. **CRITICAL**: In Repository Settings → Pages:
-   - Under "Build and deployment" > **Source**, select **"GitHub Actions"**.
-   - (Success depends on this being set to Actions, not "Deploy from a branch").
+The frontend is deployed on **Vercel** at [https://pizza-customer-service-agent.vercel.app/](https://pizza-customer-service-agent.vercel.app/)
 
-### Troubleshooting Deployment
-If you see a `Get Pages site failed` error in GitHub Actions:
-- Ensure **GitHub Actions** is selected as the source in **Settings > Pages**.
-- Ensure the repository is **Public** (or you have a GitHub Pro/Team account for private Pages).
-- Trigger a new push to `frontend/` to re-run the workflow.
-
-### Streamlit Cloud (Dashboard)
-1. Link your repo to Streamlit Cloud.
-2. Set Main file path to `streamlit/app.py`.
-3. Add your `GROQ_API_KEY` to the Secrets.
+To deploy your own fork:
+1. Import the repo on [vercel.com](https://vercel.com)
+2. Vercel auto-detects `vercel.json` and serves the `frontend/` folder
+3. Every push to `main` triggers an automatic redeploy
 
 ---
 

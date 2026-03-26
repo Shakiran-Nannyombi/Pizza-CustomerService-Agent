@@ -1,26 +1,29 @@
 <!-- Artisan Pizza AI - Home & Chat -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Artisan Pizza AI - Pizza Perfection</title>
     <!-- BEGIN: Scripts and Config -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script>
         tailwind.config = {
-          theme: {
-            extend: {
-              colors: { primary: '#FF6B35', cream: '#FFF8E7', charcoal: '#262626' },
-              fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Playfair Display', 'serif'] }
+            theme: {
+                extend: {
+                    colors: { primary: '#FF6B35', cream: '#FFF8E7', charcoal: '#262626' },
+                    fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Playfair Display', 'serif'] }
+                }
             }
-          }
         }
     </script>
+    <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
     <link rel="stylesheet" href="css/style.css">
     <!-- END: Scripts and Config -->
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
+
 <body class="bg-cream text-charcoal">
     <!-- BEGIN: MainHeader -->
     <header class="fixed top-0 w-full bg-cream/90 backdrop-blur-sm z-40 border-b border-orange-100">
@@ -37,9 +40,11 @@
                 <a class="hover:text-primary transition-colors" href="about.html">About</a>
             </nav>
             <!-- Cart Icon -->
-            <button id="cart-btn" class="relative p-2 hover:bg-orange-100 rounded-full transition-colors" data-purpose="cart-button">
+            <button id="cart-btn" class="relative p-2 hover:bg-orange-100 rounded-full transition-colors"
+                data-purpose="cart-button">
                 <i data-lucide="shopping-cart" class="h-6 w-6"></i>
-                <span id="cart-count" class="absolute top-1 right-1 bg-primary text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center">0</span>
+                <span id="cart-count"
+                    class="absolute top-1 right-1 bg-primary text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center">0</span>
             </button>
         </div>
     </header>
@@ -49,18 +54,23 @@
         <section class="relative h-[85vh] flex items-center overflow-hidden">
             <!-- Hero Background Image -->
             <div class="absolute inset-0 z-0">
-                <img alt="Artisan Pizza" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPGQR7T-aiH3-6puvvLgHI9qkdTALHHUCgEIJ-X0IZ0WxpDCl3UPGzGnNC-p59PaYE0IQYOhp5TTU2j81pUU9vFsxPrUuHRpAExI0o6MdNzVQSTIkTG5y2b4CBnfDERNdxFRVrWp7ow44LaXxrxJnxTl-tLDdtjE-yXpyN8_RpejleFkTIDfypxIZZziqXA65Yxou1f_3OBBnH_SpHti6OOU4vvQVwKIVe8AKvoTH2rP9fINXf40Sr6mx1DlpDDxXrI1hlj2o-yTuz"/>
+                <img alt="Artisan Pizza" class="w-full h-full object-cover"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPGQR7T-aiH3-6puvvLgHI9qkdTALHHUCgEIJ-X0IZ0WxpDCl3UPGzGnNC-p59PaYE0IQYOhp5TTU2j81pUU9vFsxPrUuHRpAExI0o6MdNzVQSTIkTG5y2b4CBnfDERNdxFRVrWp7ow44LaXxrxJnxTl-tLDdtjE-yXpyN8_RpejleFkTIDfypxIZZziqXA65Yxou1f_3OBBnH_SpHti6OOU4vvQVwKIVe8AKvoTH2rP9fINXf40Sr6mx1DlpDDxXrI1hlj2o-yTuz" />
                 <div class="absolute inset-0 bg-black/40"></div>
             </div>
             <div class="relative z-10 max-w-7xl mx-auto px-4 w-full">
                 <div class="max-w-2xl text-white">
                     <h1 class="text-6xl md:text-8xl font-bold mb-6 leading-tight">Pizza Perfection, Powered by AI</h1>
-                    <p class="text-xl mb-8 text-orange-50/90 leading-relaxed">Experience the future of flavor. Our AI Taste Assistant helps you craft the perfect artisan pizza, fired to perfection in 90 seconds.</p>
+                    <p class="text-xl mb-8 text-orange-50/90 leading-relaxed">Experience the future of flavor. Our AI
+                        Taste Assistant helps you craft the perfect artisan pizza, fired to perfection in 90 seconds.
+                    </p>
                     <div class="flex gap-4">
-                        <a href="menu.html" class="bg-primary hover:bg-orange-600 text-white px-8 py-4 rounded-full font-bold text-lg transition-all transform hover:scale-105 inline-block text-center">
+                        <a href="menu.html"
+                            class="bg-primary hover:bg-orange-600 text-white px-8 py-4 rounded-full font-bold text-lg transition-all transform hover:scale-105 inline-block text-center">
                             Order Now
                         </a>
-                        <a href="menu.html" class="bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 text-white px-8 py-4 rounded-full font-bold text-lg transition-all inline-block text-center">
+                        <a href="menu.html"
+                            class="bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 text-white px-8 py-4 rounded-full font-bold text-lg transition-all inline-block text-center">
                             View Menu
                         </a>
                     </div>
@@ -73,21 +83,24 @@
             <div class="max-w-7xl mx-auto px-4">
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
                     <div class="flex flex-col items-center">
-                        <div class="w-16 h-16 bg-orange-100 text-primary rounded-2xl flex items-center justify-center mb-6">
+                        <div
+                            class="w-16 h-16 bg-orange-100 text-primary rounded-2xl flex items-center justify-center mb-6">
                             <i data-lucide="zap" class="w-8 h-8"></i>
                         </div>
                         <h3 class="text-xl font-bold mb-3">Fast Delivery</h3>
                         <p class="text-gray-600">Hot and fresh to your doorstep in under 30 minutes, guaranteed.</p>
                     </div>
                     <div class="flex flex-col items-center">
-                        <div class="w-16 h-16 bg-orange-100 text-primary rounded-2xl flex items-center justify-center mb-6">
+                        <div
+                            class="w-16 h-16 bg-orange-100 text-primary rounded-2xl flex items-center justify-center mb-6">
                             <i data-lucide="bot" class="w-8 h-8"></i>
                         </div>
                         <h3 class="text-xl font-bold mb-3">AI Taste Assistant</h3>
                         <p class="text-gray-600">Personalized recommendations based on your unique flavor profile.</p>
                     </div>
                     <div class="flex flex-col items-center">
-                        <div class="w-16 h-16 bg-orange-100 text-primary rounded-2xl flex items-center justify-center mb-6">
+                        <div
+                            class="w-16 h-16 bg-orange-100 text-primary rounded-2xl flex items-center justify-center mb-6">
                             <i data-lucide="flame" class="w-8 h-8"></i>
                         </div>
                         <h3 class="text-xl font-bold mb-3">Daily Deals</h3>
@@ -102,22 +115,28 @@
             <div class="max-w-7xl mx-auto px-4">
                 <div class="text-center mb-16">
                     <h2 class="text-4xl md:text-5xl font-bold mb-4">Our Signature Pies</h2>
-                    <p class="text-gray-600 max-w-xl mx-auto">Hand-stretched dough, organic San Marzano tomatoes, and premium local ingredients.</p>
+                    <p class="text-gray-600 max-w-xl mx-auto">Hand-stretched dough, organic San Marzano tomatoes, and
+                        premium local ingredients.</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <!-- Pizza Card 1 -->
                     <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group">
                         <div class="h-64 overflow-hidden">
-                            <img alt="Truffle Mushroom" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAd59xr1RciSXXP5O38vn9jddxNiBNwcCV0HQ1sAVO_UfAialQ04TDiR1ETSrFsrOOPBhhLtgax_IL5OhhriYc9YKqVvafSJjxd-ppXCJz1nUtxLm3kzILIDjavcYX1z97dxqnhRweCx4OJk3-uWVTeAzreZ5m0_W2vcpSKQogJgfUC9mqh8H-mzxsKozPCfWWKdE34O-ZryGa7WzVfvf6zyPHFPJ-VKqC46y5FrYsvcGza6M8W9lVW1l9BVwI5Od_15T7X5ozVK4dw"/>
+                            <img alt="Truffle Mushroom"
+                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAd59xr1RciSXXP5O38vn9jddxNiBNwcCV0HQ1sAVO_UfAialQ04TDiR1ETSrFsrOOPBhhLtgax_IL5OhhriYc9YKqVvafSJjxd-ppXCJz1nUtxLm3kzILIDjavcYX1z97dxqnhRweCx4OJk3-uWVTeAzreZ5m0_W2vcpSKQogJgfUC9mqh8H-mzxsKozPCfWWKdE34O-ZryGa7WzVfvf6zyPHFPJ-VKqC46y5FrYsvcGza6M8W9lVW1l9BVwI5Od_15T7X5ozVK4dw" />
                         </div>
                         <div class="p-8">
                             <div class="flex justify-between items-start mb-4">
                                 <h3 class="text-2xl font-bold">Truffle Mushroom</h3>
                                 <span class="text-primary font-bold text-xl">$24</span>
                             </div>
-                            <p class="text-gray-500 mb-6 text-sm">Wild mushrooms, truffle oil, fresh mozzarella, and aromatic thyme.</p>
-                            <button class="add-to-cart w-full border-2 border-primary text-primary hover:bg-primary hover:text-white py-3 rounded-xl font-bold transition-colors"
-                                data-name="Truffle Mushroom" data-price="24.00" data-size="Large" data-img="https://lh3.googleusercontent.com/aida-public/AB6AXuAd59xr1RciSXXP5O38vn9jddxNiBNwcCV0HQ1sAVO_UfAialQ04TDiR1ETSrFsrOOPBhhLtgax_IL5OhhriYc9YKqVvafSJjxd-ppXCJz1nUtxLm3kzILIDjavcYX1z97dxqnhRweCx4OJk3-uWVTeAzreZ5m0_W2vcpSKQogJgfUC9mqh8H-mzxsKozPCfWWKdE34O-ZryGa7WzVfvf6zyPHFPJ-VKqC46y5FrYsvcGza6M8W9lVW1l9BVwI5Od_15T7X5ozVK4dw">
+                            <p class="text-gray-500 mb-6 text-sm">Wild mushrooms, truffle oil, fresh mozzarella, and
+                                aromatic thyme.</p>
+                            <button
+                                class="add-to-cart w-full border-2 border-primary text-primary hover:bg-primary hover:text-white py-3 rounded-xl font-bold transition-colors"
+                                data-name="Truffle Mushroom" data-price="24.00" data-size="Large"
+                                data-img="https://lh3.googleusercontent.com/aida-public/AB6AXuAd59xr1RciSXXP5O38vn9jddxNiBNwcCV0HQ1sAVO_UfAialQ04TDiR1ETSrFsrOOPBhhLtgax_IL5OhhriYc9YKqVvafSJjxd-ppXCJz1nUtxLm3kzILIDjavcYX1z97dxqnhRweCx4OJk3-uWVTeAzreZ5m0_W2vcpSKQogJgfUC9mqh8H-mzxsKozPCfWWKdE34O-ZryGa7WzVfvf6zyPHFPJ-VKqC46y5FrYsvcGza6M8W9lVW1l9BVwI5Od_15T7X5ozVK4dw">
                                 Add to Cart
                             </button>
                         </div>
@@ -125,16 +144,21 @@
                     <!-- Pizza Card 2 -->
                     <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group">
                         <div class="h-64 overflow-hidden">
-                            <img alt="Spicy Pepperoni" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlHNFMiQoAsg02SiyjgojNj-mTvwXFL8x23MzobJK7gbRJZfWePdSly7P19eif_NsamtwYp8oJaV5hGNrs8lsNogfsMNJF3yJG4tyeXEgA1mXzEpcajmlC75W-uIN7U-h0oPg5pQGbpXh4SFk-L4Qz22JySuVInooyHrn1esKrSE3o7ArFGHyBZfWemcQ4YnKSLvlUrFm4QXouDfv8i7B6oXNQVR3az_oZsqseX5JTQpxVoqA9fjIxulFhKCVXTTb9tsrWZBzRP3Us"/>
+                            <img alt="Spicy Pepperoni"
+                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlHNFMiQoAsg02SiyjgojNj-mTvwXFL8x23MzobJK7gbRJZfWePdSly7P19eif_NsamtwYp8oJaV5hGNrs8lsNogfsMNJF3yJG4tyeXEgA1mXzEpcajmlC75W-uIN7U-h0oPg5pQGbpXh4SFk-L4Qz22JySuVInooyHrn1esKrSE3o7ArFGHyBZfWemcQ4YnKSLvlUrFm4QXouDfv8i7B6oXNQVR3az_oZsqseX5JTQpxVoqA9fjIxulFhKCVXTTb9tsrWZBzRP3Us" />
                         </div>
                         <div class="p-8">
                             <div class="flex justify-between items-start mb-4">
                                 <h3 class="text-2xl font-bold">Spicy Pepperoni</h3>
                                 <span class="text-primary font-bold text-xl">$22</span>
                             </div>
-                            <p class="text-gray-500 mb-6 text-sm">Artisanal pepperoni, hot honey, chili flakes, and San Marzano sauce.</p>
-                            <button class="add-to-cart w-full border-2 border-primary text-primary hover:bg-primary hover:text-white py-3 rounded-xl font-bold transition-colors"
-                                data-name="Spicy Pepperoni" data-price="22.00" data-size="Large" data-img="https://lh3.googleusercontent.com/aida-public/AB6AXuBlHNFMiQoAsg02SiyjgojNj-mTvwXFL8x23MzobJK7gbRJZfWePdSly7P19eif_NsamtwYp8oJaV5hGNrs8lsNogfsMNJF3yJG4tyeXEgA1mXzEpcajmlC75W-uIN7U-h0oPg5pQGbpXh4SFk-L4Qz22JySuVInooyHrn1esKrSE3o7ArFGHyBZfWemcQ4YnKSLvlUrFm4QXouDfv8i7B6oXNQVR3az_oZsqseX5JTQpxVoqA9fjIxulFhKCVXTTb9tsrWZBzRP3Us">
+                            <p class="text-gray-500 mb-6 text-sm">Artisanal pepperoni, hot honey, chili flakes, and San
+                                Marzano sauce.</p>
+                            <button
+                                class="add-to-cart w-full border-2 border-primary text-primary hover:bg-primary hover:text-white py-3 rounded-xl font-bold transition-colors"
+                                data-name="Spicy Pepperoni" data-price="22.00" data-size="Large"
+                                data-img="https://lh3.googleusercontent.com/aida-public/AB6AXuBlHNFMiQoAsg02SiyjgojNj-mTvwXFL8x23MzobJK7gbRJZfWePdSly7P19eif_NsamtwYp8oJaV5hGNrs8lsNogfsMNJF3yJG4tyeXEgA1mXzEpcajmlC75W-uIN7U-h0oPg5pQGbpXh4SFk-L4Qz22JySuVInooyHrn1esKrSE3o7ArFGHyBZfWemcQ4YnKSLvlUrFm4QXouDfv8i7B6oXNQVR3az_oZsqseX5JTQpxVoqA9fjIxulFhKCVXTTb9tsrWZBzRP3Us">
                                 Add to Cart
                             </button>
                         </div>
@@ -142,16 +166,21 @@
                     <!-- Pizza Card 3 -->
                     <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group">
                         <div class="h-64 overflow-hidden">
-                            <img alt="Pesto Burrata" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8Ag1BX3__fXl18bPamr6E9BXG2-IfDLsIV4uEMMlM6R5qcqYJNcd2gHruloG9UbCm3RKM1nfU00JU3lPzkvTLVp_v4evdL1Oa80e8gmzeqBb5IMomNAljCV_JCEtS0tMCXScmo_Suu5k6_G9f8jq0MA5NGxXoRA_Q_Nd9yzEu1hZSamWoPVT46hdqxGcIdAjpbU6cWR_lvX00ZO5GK-04186opgLFj271IqwPAgOkCtEjyEagaxScDzRXKTIjdl8i0xSX7Y-2El6C"/>
+                            <img alt="Pesto Burrata"
+                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8Ag1BX3__fXl18bPamr6E9BXG2-IfDLsIV4uEMMlM6R5qcqYJNcd2gHruloG9UbCm3RKM1nfU00JU3lPzkvTLVp_v4evdL1Oa80e8gmzeqBb5IMomNAljCV_JCEtS0tMCXScmo_Suu5k6_G9f8jq0MA5NGxXoRA_Q_Nd9yzEu1hZSamWoPVT46hdqxGcIdAjpbU6cWR_lvX00ZO5GK-04186opgLFj271IqwPAgOkCtEjyEagaxScDzRXKTIjdl8i0xSX7Y-2El6C" />
                         </div>
                         <div class="p-8">
                             <div class="flex justify-between items-start mb-4">
                                 <h3 class="text-2xl font-bold">Pesto Burrata</h3>
                                 <span class="text-primary font-bold text-xl">$26</span>
                             </div>
-                            <p class="text-gray-500 mb-6 text-sm">Fresh burrata, basil pesto, toasted pine nuts, and sun-dried tomatoes.</p>
-                            <button class="add-to-cart w-full border-2 border-primary text-primary hover:bg-primary hover:text-white py-3 rounded-xl font-bold transition-colors"
-                                data-name="Pesto Burrata" data-price="26.00" data-size="Large" data-img="https://lh3.googleusercontent.com/aida-public/AB6AXuC8Ag1BX3__fXl18bPamr6E9BXG2-IfDLsIV4uEMMlM6R5qcqYJNcd2gHruloG9UbCm3RKM1nfU00JU3lPzkvTLVp_v4evdL1Oa80e8gmzeqBb5IMomNAljCV_JCEtS0tMCXScmo_Suu5k6_G9f8jq0MA5NGxXoRA_Q_Nd9yzEu1hZSamWoPVT46hdqxGcIdAjpbU6cWR_lvX00ZO5GK-04186opgLFj271IqwPAgOkCtEjyEagaxScDzRXKTIjdl8i0xSX7Y-2El6C">
+                            <p class="text-gray-500 mb-6 text-sm">Fresh burrata, basil pesto, toasted pine nuts, and
+                                sun-dried tomatoes.</p>
+                            <button
+                                class="add-to-cart w-full border-2 border-primary text-primary hover:bg-primary hover:text-white py-3 rounded-xl font-bold transition-colors"
+                                data-name="Pesto Burrata" data-price="26.00" data-size="Large"
+                                data-img="https://lh3.googleusercontent.com/aida-public/AB6AXuC8Ag1BX3__fXl18bPamr6E9BXG2-IfDLsIV4uEMMlM6R5qcqYJNcd2gHruloG9UbCm3RKM1nfU00JU3lPzkvTLVp_v4evdL1Oa80e8gmzeqBb5IMomNAljCV_JCEtS0tMCXScmo_Suu5k6_G9f8jq0MA5NGxXoRA_Q_Nd9yzEu1hZSamWoPVT46hdqxGcIdAjpbU6cWR_lvX00ZO5GK-04186opgLFj271IqwPAgOkCtEjyEagaxScDzRXKTIjdl8i0xSX7Y-2El6C">
                                 Add to Cart
                             </button>
                         </div>
@@ -164,7 +193,8 @@
     <!-- BEGIN: ChatbotInterface -->
     <div class="fixed bottom-0 right-0 z-50 flex flex-col items-end p-6">
         <!-- Chat Panel -->
-        <div class="chat-panel hidden w-[400px] h-[600px] bg-white rounded-3xl mb-6 overflow-hidden flex flex-col" id="chat-window">
+        <div class="chat-panel hidden w-[400px] h-[600px] bg-white rounded-3xl mb-6 overflow-hidden flex flex-col"
+            id="chat-window">
             <!-- Chat Header -->
             <div class="bg-primary p-4 text-white flex items-center justify-between">
                 <div class="flex items-center gap-3">
@@ -181,10 +211,12 @@
                 </button>
             </div>
             <!-- Chat History -->
-            <div id="chat-history" class="flex-1 overflow-y-auto p-4 space-y-4 custom-scrollbar bg-slate-50" data-purpose="chat-history">
+            <div id="chat-history" class="flex-1 overflow-y-auto p-4 space-y-4 custom-scrollbar bg-slate-50"
+                data-purpose="chat-history">
                 <!-- Bot Message -->
                 <div class="flex justify-start">
-                    <div class="max-w-[80%] bg-white border border-gray-100 rounded-2xl rounded-tl-none p-3 shadow-sm text-sm">
+                    <div
+                        class="max-w-[80%] bg-white border border-gray-100 rounded-2xl rounded-tl-none p-3 shadow-sm text-sm">
                         Hello! I'm your AI Taste Assistant. Looking for the perfect slice today?
                     </div>
                 </div>
@@ -192,15 +224,19 @@
             <!-- Chat Input -->
             <div class="p-4 bg-white border-t">
                 <form id="chat-form" class="relative flex items-center">
-                    <input id="chat-input" class="w-full pl-4 pr-12 py-3 bg-gray-100 border-none rounded-2xl text-sm focus:ring-2 focus:ring-primary/50" placeholder="Type your message..." type="text"/>
-                    <button type="submit" class="absolute right-2 p-2 text-primary hover:text-orange-700 transition-colors">
+                    <input id="chat-input"
+                        class="w-full pl-4 pr-12 py-3 bg-gray-100 border-none rounded-2xl text-sm focus:ring-2 focus:ring-primary/50"
+                        placeholder="Type your message..." type="text" />
+                    <button type="submit"
+                        class="absolute right-2 p-2 text-primary hover:text-orange-700 transition-colors">
                         <i data-lucide="send" class="h-6 w-6"></i>
                     </button>
                 </form>
             </div>
         </div>
         <!-- Floating Action Button -->
-        <button id="chat-toggle" class="w-16 h-16 bg-primary text-white rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all">
+        <button id="chat-toggle"
+            class="w-16 h-16 bg-primary text-white rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all">
             <i data-lucide="message-circle" class="w-8 h-8"></i>
         </button>
     </div>
@@ -214,7 +250,8 @@
                         <img src="assets/logo.svg" alt="Logo" class="w-8 h-8">
                         <span class="font-bold text-xl tracking-tight uppercase">Artisan Pizza AI</span>
                     </div>
-                    <p class="text-gray-400 text-sm leading-relaxed">Crafting digital flavors and real wood-fired experiences since 2024. The future of pizza is here.</p>
+                    <p class="text-gray-400 text-sm leading-relaxed">Crafting digital flavors and real wood-fired
+                        experiences since 2024. The future of pizza is here.</p>
                 </div>
                 <div>
                     <h4 class="font-bold mb-6 text-sm uppercase tracking-widest text-primary">Locations</h4>
@@ -236,9 +273,12 @@
                 <div>
                     <h4 class="font-bold mb-6 text-sm uppercase tracking-widest text-primary">Follow Us</h4>
                     <div class="flex gap-4">
-                        <a class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors" href="#">IG</a>
-                        <a class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors" href="#">TW</a>
-                        <a class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors" href="#">FB</a>
+                        <a class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
+                            href="#">IG</a>
+                        <a class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
+                            href="#">TW</a>
+                        <a class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
+                            href="#">FB</a>
                     </div>
                 </div>
             </div>
@@ -253,4 +293,5 @@
         lucide.createIcons();
     </script>
 </body>
+
 </html>

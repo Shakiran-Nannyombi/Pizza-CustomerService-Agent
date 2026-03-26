@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Deals - Artisan Pizza AI</title>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script>
         tailwind.config = {
-          theme: { extend: { colors: { primary: '#FF6B35', cream: '#FFF8E7', charcoal: '#262626' }, fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Playfair Display', 'serif'] } } }
+            theme: { extend: { colors: { primary: '#FF6B35', cream: '#FFF8E7', charcoal: '#262626' }, fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Playfair Display', 'serif'] } } }
         }
     </script>
+    <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
+
 <body class="bg-cream">
     <header class="fixed top-0 w-full bg-cream/90 backdrop-blur-sm z-40 border-b border-orange-100">
         <div class="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
@@ -29,7 +31,8 @@
             </nav>
             <button id="cart-btn" class="relative p-2 hover:bg-orange-100 rounded-full transition-colors">
                 <i data-lucide="shopping-cart" class="h-6 w-6"></i>
-                <span id="cart-count" class="absolute top-1 right-1 bg-primary text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center">0</span>
+                <span id="cart-count"
+                    class="absolute top-1 right-1 bg-primary text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center">0</span>
             </button>
         </div>
     </header>
@@ -37,34 +40,49 @@
     <main class="pt-32 pb-20 px-4">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-16">
-                <h1 class="text-6xl font-black mb-4" style="font-family: 'Playfair Display', serif;">Exclusive <span class="text-primary">Deals</span></h1>
-                <p class="text-gray-500 font-semibold tracking-widest uppercase text-sm">Save more on your artisan favorites</p>
+                <h1 class="text-6xl font-black mb-4" style="font-family: 'Playfair Display', serif;">Exclusive <span
+                        class="text-primary">Deals</span></h1>
+                <p class="text-gray-500 font-semibold tracking-widest uppercase text-sm">Save more on your artisan
+                    favorites</p>
             </div>
-            
+
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <!-- Deal 1 -->
-                <div class="bg-white p-10 rounded-[2.5rem] shadow-xl shadow-orange-100 border-4 border-primary relative overflow-hidden group">
-                    <div class="absolute -top-10 -right-10 w-40 h-40 bg-primary/10 rounded-full group-hover:scale-150 transition-transform duration-700"></div>
+                <div
+                    class="bg-white p-10 rounded-[2.5rem] shadow-xl shadow-orange-100 border-4 border-primary relative overflow-hidden group">
+                    <div
+                        class="absolute -top-10 -right-10 w-40 h-40 bg-primary/10 rounded-full group-hover:scale-150 transition-transform duration-700">
+                    </div>
                     <div class="relative z-10">
-                        <div class="flex items-center gap-3 mb-6 text-primary font-black uppercase text-xs tracking-widest">
+                        <div
+                            class="flex items-center gap-3 mb-6 text-primary font-black uppercase text-xs tracking-widest">
                             <i data-lucide="zap" class="w-4 h-4 fill-primary"></i> Flash Deal
                         </div>
                         <h3 class="text-4xl font-black mb-4">BOGO Monday</h3>
-                        <p class="text-gray-500 leading-relaxed mb-8 max-w-sm">Elevate your Mondays. Buy any signature AI pizza and get a classic Margherita absolutely free.</p>
-                        <button class="bg-primary text-white px-10 py-4 rounded-2xl font-black uppercase text-sm tracking-widest hover:bg-orange-600 transition-all shadow-lg shadow-primary/30 active:scale-95">Claim Deal</button>
+                        <p class="text-gray-500 leading-relaxed mb-8 max-w-sm">Elevate your Mondays. Buy any signature
+                            AI pizza and get a classic Margherita absolutely free.</p>
+                        <button
+                            class="bg-primary text-white px-10 py-4 rounded-2xl font-black uppercase text-sm tracking-widest hover:bg-orange-600 transition-all shadow-lg shadow-primary/30 active:scale-95">Claim
+                            Deal</button>
                     </div>
                 </div>
 
                 <!-- Deal 2 -->
                 <div class="bg-charcoal text-white p-10 rounded-[2.5rem] shadow-xl relative overflow-hidden group">
-                    <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-white/5 rounded-full group-hover:scale-150 transition-transform duration-700"></div>
+                    <div
+                        class="absolute -bottom-10 -left-10 w-40 h-40 bg-white/5 rounded-full group-hover:scale-150 transition-transform duration-700">
+                    </div>
                     <div class="relative z-10">
-                        <div class="flex items-center gap-3 mb-6 text-primary font-black uppercase text-xs tracking-widest">
+                        <div
+                            class="flex items-center gap-3 mb-6 text-primary font-black uppercase text-xs tracking-widest">
                             <i data-lucide="users" class="w-4 h-4"></i> Group Bundle
                         </div>
                         <h3 class="text-4xl font-black mb-4">Family Feast</h3>
-                        <p class="text-gray-400 leading-relaxed mb-8 max-w-sm">The ultimate weekend upgrade. 2 Large Pizzas, 1 Side, and a 2L Drink for only $45.</p>
-                        <button class="bg-white text-charcoal px-10 py-4 rounded-2xl font-black uppercase text-sm tracking-widest hover:bg-primary hover:text-white transition-all shadow-lg active:scale-95">View Bundle</button>
+                        <p class="text-gray-400 leading-relaxed mb-8 max-w-sm">The ultimate weekend upgrade. 2 Large
+                            Pizzas, 1 Side, and a 2L Drink for only $45.</p>
+                        <button
+                            class="bg-white text-charcoal px-10 py-4 rounded-2xl font-black uppercase text-sm tracking-widest hover:bg-primary hover:text-white transition-all shadow-lg active:scale-95">View
+                            Bundle</button>
                     </div>
                 </div>
 
@@ -74,8 +92,11 @@
                         <i data-lucide="graduation-cap" class="w-4 h-4"></i> Student Special
                     </div>
                     <h3 class="text-4xl font-black mb-4">Campus Fuel</h3>
-                    <p class="text-gray-500 leading-relaxed mb-8 max-w-sm">Flash your Makerere or Kyambogo ID for a 15% discount on all regular individual orders.</p>
-                    <button class="bg-charcoal text-white px-10 py-4 rounded-2xl font-black uppercase text-sm tracking-widest hover:bg-primary transition-all shadow-lg active:scale-95">Apply Student ID</button>
+                    <p class="text-gray-500 leading-relaxed mb-8 max-w-sm">Flash your Makerere or Kyambogo ID for a 15%
+                        discount on all regular individual orders.</p>
+                    <button
+                        class="bg-charcoal text-white px-10 py-4 rounded-2xl font-black uppercase text-sm tracking-widest hover:bg-primary transition-all shadow-lg active:scale-95">Apply
+                        Student ID</button>
                 </div>
 
                 <!-- Deal 4 -->
@@ -84,8 +105,11 @@
                         <i data-lucide="clock" class="w-4 h-4"></i> Corporate Hour
                     </div>
                     <h3 class="text-4xl font-black mb-4">Lunch Sprint</h3>
-                    <p class="text-gray-500 leading-relaxed mb-8 max-w-sm">Order between 11 AM - 1 PM on weekdays for free delivery to any office in Nakasero or Kololo.</p>
-                    <button class="bg-charcoal text-white px-10 py-4 rounded-2xl font-black uppercase text-sm tracking-widest hover:bg-primary transition-all shadow-lg active:scale-95">Set Lunch Timer</button>
+                    <p class="text-gray-500 leading-relaxed mb-8 max-w-sm">Order between 11 AM - 1 PM on weekdays for
+                        free delivery to any office in Nakasero or Kololo.</p>
+                    <button
+                        class="bg-charcoal text-white px-10 py-4 rounded-2xl font-black uppercase text-sm tracking-widest hover:bg-primary transition-all shadow-lg active:scale-95">Set
+                        Lunch Timer</button>
                 </div>
             </div>
         </div>
@@ -93,7 +117,8 @@
 
     <!-- Chatbot Interface -->
     <div class="fixed bottom-0 right-0 z-50 flex flex-col items-end p-6">
-        <div class="chat-panel hidden w-[400px] h-[600px] bg-white rounded-3xl mb-6 overflow-hidden flex flex-col shadow-2xl border border-orange-100" id="chat-window">
+        <div class="chat-panel hidden w-[400px] h-[600px] bg-white rounded-3xl mb-6 overflow-hidden flex flex-col shadow-2xl border border-orange-100"
+            id="chat-window">
             <div class="bg-primary p-4 text-white flex items-center justify-between">
                 <div class="flex items-center gap-3">
                     <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
@@ -111,14 +136,18 @@
             <div id="chat-history" class="flex-1 overflow-y-auto p-4 space-y-4 custom-scrollbar bg-slate-50"></div>
             <div class="p-4 bg-white border-t">
                 <form id="chat-form" class="relative flex items-center">
-                    <input id="chat-input" class="w-full pl-4 pr-12 py-3 bg-gray-100 border-none rounded-2xl text-sm focus:ring-2 focus:ring-primary/50" placeholder="Type your message..." type="text"/>
-                    <button type="submit" class="absolute right-2 p-2 text-primary hover:text-orange-700 transition-colors">
+                    <input id="chat-input"
+                        class="w-full pl-4 pr-12 py-3 bg-gray-100 border-none rounded-2xl text-sm focus:ring-2 focus:ring-primary/50"
+                        placeholder="Type your message..." type="text" />
+                    <button type="submit"
+                        class="absolute right-2 p-2 text-primary hover:text-orange-700 transition-colors">
                         <i data-lucide="send" class="h-6 w-6"></i>
                     </button>
                 </form>
             </div>
         </div>
-        <button id="chat-toggle" class="w-16 h-16 bg-primary text-white rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all">
+        <button id="chat-toggle"
+            class="w-16 h-16 bg-primary text-white rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all">
             <i data-lucide="message-circle" class="w-8 h-8"></i>
         </button>
     </div>
@@ -131,7 +160,8 @@
                         <img src="assets/logo.svg" alt="Logo" class="w-8 h-8">
                         <span class="font-bold text-xl tracking-tight uppercase">Artisan Pizza AI</span>
                     </div>
-                    <p class="text-gray-400 text-sm leading-relaxed">Crafting digital flavors and real wood-fired experiences since 2024. The future of pizza is here.</p>
+                    <p class="text-gray-400 text-sm leading-relaxed">Crafting digital flavors and real wood-fired
+                        experiences since 2024. The future of pizza is here.</p>
                 </div>
                 <div>
                     <h4 class="font-bold mb-6 text-sm uppercase tracking-widest text-primary">Locations</h4>
@@ -153,9 +183,12 @@
                 <div>
                     <h4 class="font-bold mb-6 text-sm uppercase tracking-widest text-primary">Follow Us</h4>
                     <div class="flex gap-4">
-                        <a class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors" href="#">IG</a>
-                        <a class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors" href="#">TW</a>
-                        <a class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors" href="#">FB</a>
+                        <a class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
+                            href="#">IG</a>
+                        <a class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
+                            href="#">TW</a>
+                        <a class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
+                            href="#">FB</a>
                     </div>
                 </div>
             </div>
@@ -164,4 +197,5 @@
             </div>
         </div>
     </footer>
+
 </html>

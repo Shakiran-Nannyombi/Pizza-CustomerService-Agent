@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>About - Artisan Pizza AI</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script>
         tailwind.config = {
-          theme: { extend: { colors: { primary: '#FF6B35', cream: '#FFF8E7', charcoal: '#262626' } } }
+            theme: { extend: { colors: { primary: '#FF6B35', cream: '#FFF8E7', charcoal: '#262626' } } }
         }
     </script>
+    <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
+
 <body class="bg-cream font-sans">
     <header class="fixed top-0 w-full bg-cream/90 backdrop-blur-sm z-40 border-b border-orange-100">
         <div class="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
@@ -28,7 +31,8 @@
             </nav>
             <button id="cart-btn" class="relative p-2 hover:bg-orange-100 rounded-full">
                 <i data-lucide="shopping-cart" class="h-6 w-6"></i>
-                <span id="cart-count" class="absolute top-1 right-1 bg-primary text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center">0</span>
+                <span id="cart-count"
+                    class="absolute top-1 right-1 bg-primary text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center">0</span>
             </button>
         </div>
     </header>
@@ -36,45 +40,58 @@
     <main class="pt-32 pb-20 px-4">
         <div class="max-w-5xl mx-auto">
             <div class="text-center mb-16">
-                <h1 class="text-6xl font-black mb-6" style="font-family: 'Playfair Display', serif;">The Future of <span class="text-primary">Taste</span></h1>
+                <h1 class="text-6xl font-black mb-6" style="font-family: 'Playfair Display', serif;">The Future of <span
+                        class="text-primary">Taste</span></h1>
                 <p class="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-                    Bridging the gap between artisanal tradition and artificial intelligence. We don't just bake pizza; we engineer experiences.
+                    Bridging the gap between artisanal tradition and artificial intelligence. We don't just bake pizza;
+                    we engineer experiences.
                 </p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-20">
-                <div class="flex flex-col items-center text-center p-8 bg-white rounded-3xl shadow-xl shadow-orange-100/50">
+                <div
+                    class="flex flex-col items-center text-center p-8 bg-white rounded-3xl shadow-xl shadow-orange-100/50">
                     <div class="w-16 h-16 bg-primary/10 text-primary rounded-2xl flex items-center justify-center mb-6">
                         <i data-lucide="target" class="w-8 h-8"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-4">Our Mission</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed"> To deliver high-performance flavor using data-driven techniques while honoring the soul of wood-fired baking.</p>
+                    <p class="text-gray-500 text-sm leading-relaxed"> To deliver high-performance flavor using
+                        data-driven techniques while honoring the soul of wood-fired baking.</p>
                 </div>
-                <div class="flex flex-col items-center text-center p-8 bg-white rounded-3xl shadow-xl shadow-orange-100/50">
+                <div
+                    class="flex flex-col items-center text-center p-8 bg-white rounded-3xl shadow-xl shadow-orange-100/50">
                     <div class="w-16 h-16 bg-primary/10 text-primary rounded-2xl flex items-center justify-center mb-6">
                         <i data-lucide="cpu" class="w-8 h-8"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-4">AI Integration</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed">Our Taste Assistant uses deep learning to suggest the perfect crust-to-topping ratio for every individual preference.</p>
+                    <p class="text-gray-500 text-sm leading-relaxed">Our Taste Assistant uses deep learning to suggest
+                        the perfect crust-to-topping ratio for every individual preference.</p>
                 </div>
-                <div class="flex flex-col items-center text-center p-8 bg-white rounded-3xl shadow-xl shadow-orange-100/50">
+                <div
+                    class="flex flex-col items-center text-center p-8 bg-white rounded-3xl shadow-xl shadow-orange-100/50">
                     <div class="w-16 h-16 bg-primary/10 text-primary rounded-2xl flex items-center justify-center mb-6">
                         <i data-lucide="users" class="w-8 h-8"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-4">Local Impact</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed">Sourcing the freshest ingredients from Ugandan farmers to support our local ecosystem in Kampala and beyond.</p>
+                    <p class="text-gray-500 text-sm leading-relaxed">Sourcing the freshest ingredients from Ugandan
+                        farmers to support our local ecosystem in Kampala and beyond.</p>
                 </div>
             </div>
 
-            <div class="bg-charcoal text-white rounded-[3rem] p-12 md:p-20 flex flex-col md:flex-row items-center gap-12 overflow-hidden relative">
+            <div
+                class="bg-charcoal text-white rounded-[3rem] p-12 md:p-20 flex flex-col md:flex-row items-center gap-12 overflow-hidden relative">
                 <div class="flex-1 z-10">
                     <h2 class="text-4xl font-bold mb-6">Why we started in <span class="text-primary">Kampala</span></h2>
                     <p class="text-gray-400 mb-8 leading-relaxed">
-                        Kampala is a city of vibrant energy and incredible flavors. We saw an opportunity to introduce a new standard of consistency and innovation to the local pizza scene, starting from our first kitchen in Kisementi.
+                        Kampala is a city of vibrant energy and incredible flavors. We saw an opportunity to introduce a
+                        new standard of consistency and innovation to the local pizza scene, starting from our first
+                        kitchen in Kisementi.
                     </p>
                     <div class="flex gap-4">
-                        <div class="px-6 py-3 bg-white/5 rounded-full border border-white/10 text-sm font-bold">100% Wood Fired</div>
-                        <div class="px-6 py-3 bg-white/5 rounded-full border border-white/10 text-sm font-bold">AI Recommended</div>
+                        <div class="px-6 py-3 bg-white/5 rounded-full border border-white/10 text-sm font-bold">100%
+                            Wood Fired</div>
+                        <div class="px-6 py-3 bg-white/5 rounded-full border border-white/10 text-sm font-bold">AI
+                            Recommended</div>
                     </div>
                 </div>
                 <div class="flex-1 relative">
@@ -88,7 +105,8 @@
 
     <!-- Chatbot Interface -->
     <div class="fixed bottom-0 right-0 z-50 flex flex-col items-end p-6">
-        <div class="chat-panel hidden w-[400px] h-[600px] bg-white rounded-3xl mb-6 overflow-hidden flex flex-col shadow-2xl border border-orange-100" id="chat-window">
+        <div class="chat-panel hidden w-[400px] h-[600px] bg-white rounded-3xl mb-6 overflow-hidden flex flex-col shadow-2xl border border-orange-100"
+            id="chat-window">
             <div class="bg-primary p-4 text-white flex items-center justify-between">
                 <div class="flex items-center gap-3">
                     <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
@@ -106,14 +124,18 @@
             <div id="chat-history" class="flex-1 overflow-y-auto p-4 space-y-4 custom-scrollbar bg-slate-50"></div>
             <div class="p-4 bg-white border-t">
                 <form id="chat-form" class="relative flex items-center">
-                    <input id="chat-input" class="w-full pl-4 pr-12 py-3 bg-gray-100 border-none rounded-2xl text-sm focus:ring-2 focus:ring-primary/50" placeholder="Type your message..." type="text"/>
-                    <button type="submit" class="absolute right-2 p-2 text-primary hover:text-orange-700 transition-colors">
+                    <input id="chat-input"
+                        class="w-full pl-4 pr-12 py-3 bg-gray-100 border-none rounded-2xl text-sm focus:ring-2 focus:ring-primary/50"
+                        placeholder="Type your message..." type="text" />
+                    <button type="submit"
+                        class="absolute right-2 p-2 text-primary hover:text-orange-700 transition-colors">
                         <i data-lucide="send" class="h-6 w-6"></i>
                     </button>
                 </form>
             </div>
         </div>
-        <button id="chat-toggle" class="w-16 h-16 bg-primary text-white rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all">
+        <button id="chat-toggle"
+            class="w-16 h-16 bg-primary text-white rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all">
             <i data-lucide="message-circle" class="w-8 h-8"></i>
         </button>
     </div>
@@ -126,7 +148,8 @@
                         <img src="assets/logo.svg" alt="Logo" class="w-8 h-8">
                         <span class="font-bold text-xl tracking-tight uppercase">Artisan Pizza AI</span>
                     </div>
-                    <p class="text-gray-400 text-sm leading-relaxed">Crafting digital flavors and real wood-fired experiences since 2024. The future of pizza is here.</p>
+                    <p class="text-gray-400 text-sm leading-relaxed">Crafting digital flavors and real wood-fired
+                        experiences since 2024. The future of pizza is here.</p>
                 </div>
                 <div>
                     <h4 class="font-bold mb-6 text-sm uppercase tracking-widest text-primary">Locations</h4>
@@ -148,9 +171,12 @@
                 <div>
                     <h4 class="font-bold mb-6 text-sm uppercase tracking-widest text-primary">Follow Us</h4>
                     <div class="flex gap-4">
-                        <a class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors" href="#">IG</a>
-                        <a class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors" href="#">TW</a>
-                        <a class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors" href="#">FB</a>
+                        <a class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
+                            href="#">IG</a>
+                        <a class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
+                            href="#">TW</a>
+                        <a class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
+                            href="#">FB</a>
                     </div>
                 </div>
             </div>
@@ -165,4 +191,5 @@
         lucide.createIcons();
     </script>
 </body>
+
 </html>
