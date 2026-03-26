@@ -10,6 +10,7 @@
 
 <p align="center">
   <a href="https://pizza-customer-service-agent.vercel.app/">🍕 Live Site</a> •
+  <a href="https://pizza-customerservice-agent.streamlit.app/">📊 AI Dashboard</a> •
   <a href="#project-structure">Architecture</a> •
   <a href="#local-setup">Setup Guide</a>
 </p>
