@@ -50,12 +50,21 @@ Artisan Pizza AI is a premium, AI-driven platform designed to revolutionize the 
 
 ## Deployment
 
-The frontend is deployed on **Vercel** at [https://pizza-customer-service-agent.vercel.app/](https://pizza-customer-service-agent.vercel.app/)
+### Frontend — Vercel
+Live at [https://pizza-customer-service-agent.vercel.app/](https://pizza-customer-service-agent.vercel.app/)
 
 To deploy your own fork:
 1. Import the repo on [vercel.com](https://vercel.com)
 2. Vercel auto-detects `vercel.json` and serves the `frontend/` folder
 3. Every push to `main` triggers an automatic redeploy
+
+### AI Dashboard — Streamlit Cloud
+Live at [https://pizza-customerservice-agent.streamlit.app/](https://pizza-customerservice-agent.streamlit.app/)
+
+To deploy your own fork:
+1. Link the repo on [streamlit.io/cloud](https://streamlit.io/cloud)
+2. Set the main file path to `streamlit/app.py`
+3. Add your `GROQ_API_KEY` under the app Secrets
 
 ---
 
